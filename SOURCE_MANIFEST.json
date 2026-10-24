@@ -1,0 +1,404 @@
+{
+  "schema": 1,
+  "firmware_version": "0.254",
+  "source_head": "10a521223b84ab51e54417222de195e8f73032bc",
+  "tracked_source_clean": true,
+  "copied_files": [
+    {
+      "path": "firmware/main/CMakeLists.txt",
+      "bytes": 2697,
+      "sha256": "7DD63789FE616BB374B61D571BE488EACD5FDBB977E743190D64459AD2ECE137"
+    },
+    {
+      "path": "firmware/main/Kconfig.projbuild",
+      "bytes": 4989,
+      "sha256": "8AE8A473F9132E1CE1C0B28D0250368EE8BC4D58D88EDEF807CF7F1F414D19E7"
+    },
+    {
+      "path": "firmware/main/a2dp_audio.h",
+      "bytes": 14268,
+      "sha256": "DD32487E0FF44D2312917176DEF479426391C0755BB7F8F3F267D66158AC6C27"
+    },
+    {
+      "path": "firmware/main/a2dp_audio_int.c",
+      "bytes": 70203,
+      "sha256": "E80360410624327837355FB2B740A0B179F01B9C7D50E8706D72D4A626BC0BD8"
+    },
+    {
+      "path": "firmware/main/amp_control.c",
+      "bytes": 16531,
+      "sha256": "D5D1F8357BDB27969D27786E4200E69C41F4230EA34FEC580A99A771FCB6DA42"
+    },
+    {
+      "path": "firmware/main/amp_control.h",
+      "bytes": 717,
+      "sha256": "0960A32950023FFEFBB65AD0A46CA913619EB04A12346ECA043315FBBF0995FB"
+    },
+    {
+      "path": "firmware/main/amp_profile.c",
+      "bytes": 9313,
+      "sha256": "0579D2EDC4E719807DCE0F3901589BE8E112223AE8FD3B2E6E691604B86C2B0B"
+    },
+    {
+      "path": "firmware/main/amp_profile.h",
+      "bytes": 1828,
+      "sha256": "CD6794DED60CA7DC34E6E2E423B10B5964E65DC604724F959392FA6639141408"
+    },
+    {
+      "path": "firmware/main/audio_input_budget.c",
+      "bytes": 2930,
+      "sha256": "9ECE5262865D8E07DCE9F029AC6EF186EEDF7CC12EDFFB29AECA2BD30F755F65"
+    },
+    {
+      "path": "firmware/main/audio_input_budget.h",
+      "bytes": 162,
+      "sha256": "49E42F3822667EF5D5589189E8EFF7B74B380FA06111D91252EE3647FCBB12AD"
+    },
+    {
+      "path": "firmware/main/ble_tuning.c",
+      "bytes": 12836,
+      "sha256": "AB7DA3B8C9D7E860FF7606F73F7C0FDE39065AD3542055379FE817EE0C7DC3BD"
+    },
+    {
+      "path": "firmware/main/ble_tuning.h",
+      "bytes": 1734,
+      "sha256": "BF6A2CEF7C6B12D828F97D59269A87A6F1885DF76C186473EDFC9A2EBF530242"
+    },
+    {
+      "path": "firmware/main/bt_codec_guard.c",
+      "bytes": 24862,
+      "sha256": "1C14B934384E18748E021B28EB5945E153059AF0A525BA0902EDED2180377CED"
+    },
+    {
+      "path": "firmware/main/bt_codec_guard.h",
+      "bytes": 416,
+      "sha256": "61C1B199D238852BE8BEE71F7ADC5C10145EF600DCB9F447DEDBAEC469629A2D"
+    },
+    {
+      "path": "firmware/main/bt_route_hold.h",
+      "bytes": 2010,
+      "sha256": "7113E8B06153DEE9D65D16DD5C0F528240E65FC6FD3EA47E397641A761EC37DC"
+    },
+    {
+      "path": "firmware/main/core1_frozen.json",
+      "bytes": 412959,
+      "sha256": "D141B7CF35D9B9C409A72CB4AC1D09814FC5D33AAD5F29C0A9397A7EC9ABA5E3"
+    },
+    {
+      "path": "firmware/main/dsp_audio.c",
+      "bytes": 26575,
+      "sha256": "9B6D5A06D31CBB2F2D85E57CFFF94491E95F74A87EB35C06E3FD2447AA1B39D3"
+    },
+    {
+      "path": "firmware/main/dsp_audio.h",
+      "bytes": 7885,
+      "sha256": "01180B03E3D36F91AA77636D54FD733C926C23CAEFCE1B2695092277AFC40F32"
+    },
+    {
+      "path": "firmware/main/dsp_biquad_s31.S",
+      "bytes": 3657,
+      "sha256": "1B890B9B56F8D894F8F1DD9EF2815550E4BE958DEEDF0A4ED943BF3DD11BE517"
+    },
+    {
+      "path": "firmware/main/dsp_biquad_s31.h",
+      "bytes": 1472,
+      "sha256": "BB081C39AF587784ED5ACFD25D9AE4DAE809ACFC2534DAC54C0C9B16B35119BB"
+    },
+    {
+      "path": "firmware/main/dsp_config.c",
+      "bytes": 65929,
+      "sha256": "F37C976CBD74D82443B79B55CB2DD428F4ED1A331925236934FB21B581192E8F"
+    },
+    {
+      "path": "firmware/main/dsp_config.h",
+      "bytes": 27593,
+      "sha256": "17040B7A75547DD20D4C7B44BFB222905E1DC7292E5CD0606B435A46DBAC7AEC"
+    },
+    {
+      "path": "firmware/main/dsp_engine.c",
+      "bytes": 39370,
+      "sha256": "1AA9DF405298209C0127B3BE3C340CEB19FB33736EF8BBF97CC4BBB9D6752BD1"
+    },
+    {
+      "path": "firmware/main/dsp_engine.h",
+      "bytes": 5114,
+      "sha256": "F3808ADF0B30EB21F1F2EB5DAB89B3187E64C13152407AA835920AAEB5E68A00"
+    },
+    {
+      "path": "firmware/main/dsp_filter.c",
+      "bytes": 5689,
+      "sha256": "00162C26E0485A8AF2AE1837A197B4219EB4E01A10E90A506EC67C4527939199"
+    },
+    {
+      "path": "firmware/main/dsp_filter.h",
+      "bytes": 5239,
+      "sha256": "A9B0B4432C219195FA13F59E08483E93B288B239E6CE43CA9C5AC12FB878D2BC"
+    },
+    {
+      "path": "firmware/main/dsp_version.h",
+      "bytes": 91138,
+      "sha256": "6DE2BB03E6938E70904BBD51E05591255EE82A82B6E2F8935A7CA7884292EAB1"
+    },
+    {
+      "path": "firmware/main/hw_mute.c",
+      "bytes": 9143,
+      "sha256": "5C7B00A8090BD4AF5EEC36FBEE571A996989F0D64378344F38BA67CDD1DA4EC2"
+    },
+    {
+      "path": "firmware/main/hw_mute.h",
+      "bytes": 4126,
+      "sha256": "071B518A08D4DC88FD6F307B169FC40720EB210A306D3B2DC35E3BAE2F8DABD2"
+    },
+    {
+      "path": "firmware/main/i2s1_out.c",
+      "bytes": 8075,
+      "sha256": "B794EA36D281D1FC53609262CD9466776F4C2693464D6AA75498EDC402F73908"
+    },
+    {
+      "path": "firmware/main/i2s1_out.h",
+      "bytes": 2037,
+      "sha256": "E31301C702C281E01B60FCB206CDDD86929DB3ED756FF18CE49C7BE5A94DB91E"
+    },
+    {
+      "path": "firmware/main/i2s_out.h",
+      "bytes": 1659,
+      "sha256": "8B50205FBA2E050E628821835481C94385F9F908867B999B809EC1331C1826DA"
+    },
+    {
+      "path": "firmware/main/i2s_out_v2.c",
+      "bytes": 26930,
+      "sha256": "A43174B4FBEBA861B27C47318E3D7031780DA4256D20AA810C32558A2199457D"
+    },
+    {
+      "path": "firmware/main/i2s_out_v2.h",
+      "bytes": 4898,
+      "sha256": "EC8BC6400BE165C77F9F6CFFBFA658EA6A83C14DF9B3767B5D01E716A6E9BF2F"
+    },
+    {
+      "path": "firmware/main/idf_component.yml",
+      "bytes": 58,
+      "sha256": "8D47253CEBE6D1BAE831AB46DB12C7B17F65BADC456A30BD4113CAF7FD3BBE83"
+    },
+    {
+      "path": "firmware/main/pcm_dma_stage.c",
+      "bytes": 1243,
+      "sha256": "3C226782A3EBE5C7C38EE9ADD681ADD3CB54FCDCB3D0211ECD5EAC37DB5F9B5B"
+    },
+    {
+      "path": "firmware/main/pcm_dma_stage.h",
+      "bytes": 738,
+      "sha256": "D9402305FB650D704B5E18A2EC0ADF5B6275D95D9267E47D94ECEB77E18AE95B"
+    },
+    {
+      "path": "firmware/main/serial_proto.c",
+      "bytes": 54848,
+      "sha256": "11FFDD8D5943F22D34A617570B2883A758BC0A4F8B708185C89E7D3EBA30707B"
+    },
+    {
+      "path": "firmware/main/serial_proto.h",
+      "bytes": 1166,
+      "sha256": "0CE9B66C6C3D722697B200F04E60BFD375E81B772082C89E861C0812A53E2198"
+    },
+    {
+      "path": "firmware/main/tusb_config.h",
+      "bytes": 2157,
+      "sha256": "355AABB91A30611E6B3AC8B6D37E875B5595424ECA6A11ADF9C3F8AE2FCEC8FC"
+    },
+    {
+      "path": "firmware/main/tusb_config_uac.h",
+      "bytes": 4126,
+      "sha256": "47BC7C2520358F2F37FF40CBD8AD4FBDE1FDB52E2314DD0739F81D2772A401A2"
+    },
+    {
+      "path": "firmware/main/uac2_audio.c",
+      "bytes": 162160,
+      "sha256": "C83DBB4260B8FDDAD7A614772B7367897DF7C8065D3FB1F767EC9CD71F967960"
+    },
+    {
+      "path": "firmware/main/uac2_audio.h",
+      "bytes": 6706,
+      "sha256": "007F810215773BB83B8580C221138368AA6ED99F3F5ABD7185DCEFE2A10BEBF4"
+    },
+    {
+      "path": "firmware/main/uac2_descriptors.h",
+      "bytes": 6097,
+      "sha256": "B44AA0DAC3542772958AF8E3FF73BC4CC3CC96EF5B26BB586DAB3A7192EC0183"
+    },
+    {
+      "path": "firmware/main/uac_audio.h",
+      "bytes": 927,
+      "sha256": "B13D36D0E4722A8C4192A857F84980849FAEC3AE94ADF03C3F378AA884CF16BC"
+    },
+    {
+      "path": "firmware/main/uac_bridge_main.c",
+      "bytes": 5659,
+      "sha256": "672E6F1BC61BE3D8EBDD8435FD47E9163A4B14E5AEDDCDF3A6031E1432B445B6"
+    },
+    {
+      "path": "firmware/main/uac_config.h",
+      "bytes": 4123,
+      "sha256": "2AC1A90CC54242FA8F1679C02AE0F00712DEC8971FE407DFDF71BD1EA78EA704"
+    },
+    {
+      "path": "firmware/main/uac_descriptors.h",
+      "bytes": 20462,
+      "sha256": "3F6C8B28EB77D1B277E8CF67F0B3954AE694A96994C60C0CCB76BE6A4BCB9FB6"
+    },
+    {
+      "path": "firmware/main/uac_usb_intr.c",
+      "bytes": 1040,
+      "sha256": "CFC73BE5BCEE2B995BF4B1CFD2698A8F358A0FB216DCD9A1019F46A14792B933"
+    },
+    {
+      "path": "firmware/CMakeLists.txt",
+      "bytes": 107,
+      "sha256": "426921F70315107F6C5A1F29FF2533294CDAB62F5DE0EEFBFA9920E5531029E1"
+    },
+    {
+      "path": "firmware/sdkconfig",
+      "bytes": 139227,
+      "sha256": "5195422BF16D47F774CB9FAF4F0094AD00697F70C44EC36DFD5AAB7212FD2219"
+    },
+    {
+      "path": "firmware/sdkconfig.defaults",
+      "bytes": 3521,
+      "sha256": "D49D9E376A8AD52F977F36471353D06F20BA403D889902635C8A636207996A86"
+    },
+    {
+      "path": "firmware/partitions.csv",
+      "bytes": 589,
+      "sha256": "85837105B35337AFAA26F7E5EA66BE2A4243B03F3DC4CE51C2E13E1B8AA17A6F"
+    },
+    {
+      "path": "firmware/dependencies.lock",
+      "bytes": 625,
+      "sha256": "B898AFE7051FD236316A17F60B41B07690E36A9C202A8262604347F83F3A31AE"
+    },
+    {
+      "path": "firmware/components/amp_json/cJSON.c",
+      "bytes": 80399,
+      "sha256": "298581A04A36C0165DA4B0AADE235C23088CB2FAA58651D720EA2F3706ED0B0D"
+    },
+    {
+      "path": "firmware/components/amp_json/cJSON.h",
+      "bytes": 16394,
+      "sha256": "25B0145150D500498E4D209CEC69C18C42CF818BFFCC54690BE3B895A2A16DEE"
+    },
+    {
+      "path": "firmware/components/amp_json/CMakeLists.txt",
+      "bytes": 134,
+      "sha256": "4E11604581EE3588E33F629461B0AF62B16D2A2796138F2091001F39F84FB42E"
+    },
+    {
+      "path": "firmware/components/amp_json/LICENSE",
+      "bytes": 1084,
+      "sha256": "A36DDA207C36DB5818729C54E7AD4E8B0C6FBA847491BA64F372C1A2037B6D5C"
+    },
+    {
+      "path": "firmware/components/amp_json/README.md",
+      "bytes": 380,
+      "sha256": "732FE59224704C175874330C54DAC1E20EC4B3C2DBBFC5FFE39652950786E8CC"
+    },
+    {
+      "path": "firmware/components/amp_json/source_identity.json",
+      "bytes": 609,
+      "sha256": "2844C992085A1517DCC236CC8693DA81E608FC63230FF587838F400CA8CB04F0"
+    },
+    {
+      "path": "firmware/tools/check_core1_frozen.py",
+      "bytes": 3126,
+      "sha256": "72EFBE9D6B554692DF50E6C005E35BA89B124F623EDB264819E8DBD051A03659",
+      "source_sha256": "053B522889EA5A4D965104C972637CE00220B7884B1081CB009B71DB7E7476F5",
+      "publication_change": "IDF_PATH path resolution only; all original guard criteria preserved"
+    },
+    {
+      "path": "webui/dsp webui.html",
+      "bytes": 276809,
+      "sha256": "680EF0950279BC939A5A65FC3F2F8E4E2A8958BD842769B24821E6334E93497E",
+      "source_sha256": "446EC4B3EFB7370E2F65B71759FC2B713B19B4B153BA74ED0F98DA5AC5A063B8",
+      "publication_change": "Add nonfunctional license notice for standalone redistribution"
+    },
+    {
+      "path": "webui/console.source.html",
+      "bytes": 20336,
+      "sha256": "FC3E8B50EC7187B3BF8C13CF56D1826164405342C77B05F20677F9F782A54321",
+      "source_sha256": "E79CE22E6C270AD35F0E7463967CCE41A27EA88FA3F92C4332BCC42D9637EA80",
+      "publication_change": "Add nonfunctional license notice for standalone redistribution"
+    },
+    {
+      "path": "webui/base.css",
+      "bytes": 37405,
+      "sha256": "D511F2FA1D4115A587DEC7669BBA68343D01048F83ED6D023A32C763B0DA1856"
+    },
+    {
+      "path": "webui/console.css",
+      "bytes": 14157,
+      "sha256": "545B9718F067F86402319133F95A1535C2FCDD7C51C6084DDD7A85FB94246EC4"
+    },
+    {
+      "path": "webui/app.js",
+      "bytes": 138693,
+      "sha256": "7A787F23B84F12E1EE7C26ACC2286005F45808036AFE0F30421E5CFC957E9721"
+    },
+    {
+      "path": "webui/config-codec.js",
+      "bytes": 5047,
+      "sha256": "C1AEA73B62A96CDF2CFF762490353E86DDA197D30D1F289914351D16F060ADE3"
+    },
+    {
+      "path": "webui/amp-control.js",
+      "bytes": 18842,
+      "sha256": "CFACBA81C7D4A4D0AEA915B5E56413AB2BFD2E29E7ED52F2704EF0835A952217"
+    },
+    {
+      "path": "webui/locales.js",
+      "bytes": 38317,
+      "sha256": "D1401D90B9384CE7ACCE0E76E630E0F143A8FE9BA1F8F99179B6EDD865EE046C"
+    },
+    {
+      "path": "webui/i18n.js",
+      "bytes": 4136,
+      "sha256": "D1DD76BD00FA8EFD1C2DF2F8B67C97800CBD2C17C83F80BB2F23A9E09685A869"
+    },
+    {
+      "path": "webui/build.cjs",
+      "bytes": 2053,
+      "sha256": "FE13EE874998217DA505FC6907E2C2D920B47CF53152663DB3159A908E12FCC5"
+    },
+    {
+      "path": "webui/profiles/tas5828m.json",
+      "bytes": 2893,
+      "sha256": "E49E842C195A7295FF7C9DAD2378254009CFDADDD92C68B55B356202EBCDED7E"
+    },
+    {
+      "path": "webui/profiles/tas5825m.json",
+      "bytes": 2893,
+      "sha256": "AD394BB4CCC69069D65D090A061CC111EB8D2054724CDAD3DE37EA8393DCB649"
+    },
+    {
+      "path": "docs/PROTOCOL.md",
+      "bytes": 7340,
+      "sha256": "1F301BE02A4C93D46DD42764BD734391E7F3E58E2E949D4548DC4FFB68D9CB4F",
+      "source_sha256": "EF5472A3214855EC3F87A10DCE0C6DE1BED4349CC575D273E5DC3BC08D5AAB45",
+      "publication_change": "Replace local workflow reference with public provenance files"
+    },
+    {
+      "path": "docs/images/webui-zh.png",
+      "bytes": 159946,
+      "sha256": "56BC37C3C63F65C1DCA21D42B3C94D90730947316D23A7B80D1A084898808F0B"
+    }
+  ],
+  "excluded": [
+    "full ESP-IDF",
+    "build trees and ELF",
+    "logic-analyzer tools and data",
+    "handoff and local history",
+    "credentials and device inventories",
+    "private backups"
+  ],
+  "hardware_operations": false,
+  "firmware_rebuilt": false,
+  "license_scope": "LICENSE_SCOPE.md",
+  "binary_publication": "WITHHELD_LICENSE_CONFLICT; identity only",
+  "sdk_manifest": "sdk/manifest.json"
+}

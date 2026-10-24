@@ -1,0 +1,27 @@
+name: 故障报告 / Bug report
+description: 提供版本、场景和最少复现步骤，不上传个人信息。
+body:
+  - type: input
+    id: version
+    attributes:
+      label: 固件版本与硬件 / Firmware and hardware
+    validations:
+      required: true
+  - type: textarea
+    id: scene
+    attributes:
+      label: 音源与复现步骤 / Source and reproduction
+      description: USB/BT、codec、采样率、单源/双源、操作顺序。
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 期望与实际结果 / Expected and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 已脱敏的最少相关证据 / Minimal redacted evidence
+      description: 不要上传令牌、配对密钥、个人地址或音乐文件。

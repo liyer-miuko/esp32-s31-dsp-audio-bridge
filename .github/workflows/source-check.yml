@@ -1,0 +1,23 @@
+name: Source snapshot and WebUI
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check snapshot file identities
+        run: python tools/check_snapshot.py
+      - name: Build standalone WebUI without dependencies
+        run: node webui/build.cjs
+      - name: Require unchanged generated HTML
+        run: git diff --exit-code -- 'webui/dsp webui.html'

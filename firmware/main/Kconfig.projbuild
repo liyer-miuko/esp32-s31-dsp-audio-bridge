@@ -1,0 +1,127 @@
+menu "ESP32-S31 UAC Bridge"
+
+    config UAC2_TEST_TONE
+        bool "Output a 1 kHz I2S test tone instead of USB audio"
+        default n
+        help
+            Enabling this option makes the I2S pump task generate a 1 kHz,
+            -12 dBFS stereo sine wave directly from the ESP32. USB data is
+            ignored. Use it only to isolate whether a downstream DAC/amplifier
+            (for example TAS5828) is receiving and reproducing I2S data.
+
+    config UAC2_BT_INJECT
+        bool "Inject USB audio PCM into the BT PCM ring (no phone needed)"
+        default n
+        help
+            Testing only. Every PCM frame arriving from the USB host is also
+            pushed into the BT decoded-PCM ring while the firmware pretends a
+            real A2DP source is connected and streaming. Everything downstream
+            (ring level, start gate, pump, core1, watermarks, trim) is the real
+            BT path, so device-side stalls and underruns can be reproduced
+            without a phone. Bluetooth link loss and codec internals are NOT
+            modelled. Play-time format must match the USB host format.
+
+    config BT_A2DP_DEVICE_NAME
+        string "Bluetooth A2DP sink device name"
+        default "S31 UAC2 BT Bridge"
+
+    config BT_BLE_TUNING_ENABLE
+        bool "Enable BLE GATT tuning on the existing dual-mode stack"
+        depends on SERIAL_PROTO_ENABLE
+        default y
+        help
+            Control only, UUID FF00/FF01/FF02. One host lease across USB/BLE.
+            Tuning/NVS writes may briefly compete with Classic audio; no LE Audio.
+
+    config BT_A2DP_SSP_ENABLED
+        bool "Enable Secure Simple Pairing"
+        default n
+
+    config BT_A2DP_AVRCP_ROLE
+        bool "Initialize AVRCP CT/TG ahead of A2DP"
+        default n
+        help
+            A sink that opens the AVCTP channel first makes Windows close a
+            paired A2DP link. Keep disabled unless a source is proven to need
+            the sink to initiate AVRCP.
+
+    config BT_A2DP_SWITCH_HOLD_MS
+        int "BT audio must stream continuously for this many ms before it takes over"
+        default 80
+        range 0 2000
+
+    config BT_A2DP_SWITCH_BACK_MS
+        int "Delay in ms before returning to UAC after BT stream stops"
+        default 100
+        range 0 2000
+
+    config DUAL_I2S_TEST_P0_PINS_ALT
+        bool "Dual-master test layout: I2S0 BCLK14/WS15, I2S1 BCLK3/WS4"
+        default y
+        help
+            Disable for natural product layout: I2S0 BCLK3/WS4 and I2S1
+            BCLK14/WS15. DATA stays GPIO7/16 and MCLK stays GPIO2/13.
+            Both layouts are masters. Change physical wiring before use.
+
+    config I2S_OUT_SLOT_BITS
+        int "I2S0 output slot width in bits (16/24/32)"
+        default 32
+        range 16 32
+
+    config BT_PCM_RING_FRAMES
+        int "BT decoded PCM ring depth in 32-bit stereo frames"
+        default 8192
+        range 1024 16384
+
+    config DSP_ENABLE
+        bool "Enable core1 DSP processing path"
+        default y
+        help
+            When enabled, every UAC/BT stereo PCM block is handed to the
+            core1 DSP task before I2S slot conversion.
+
+    config DSP_MASTER_GAIN_TENTH_DB
+        int "DSP master gain in 0.1 dB units"
+        default 0
+        range -120 120
+        help
+            Master gain applied by the DSP task to UAC and BT audio.
+            0 means bit-perfect pass-through. Allowed range is -12.0 dB
+            to +12.0 dB; positive gain has clip protection in the DSP path.
+            The host protocol (WebUI master volume) can change this at runtime.
+
+    config SERIAL_PROTO_ENABLE
+        bool "Enable the host configuration protocol (AA 55 / CRC8)"
+        default y
+        help
+            Installs a byte-stream driver for the host COM port and speaks the
+            AA 55 / CRC8 frame protocol used by the DSP WebUI. While a host is
+            active, ESP_LOG output is delivered as LOG frames; after the idle
+            timeout raw text logging resumes, so serial captures and the LA
+            workflow keep working when no host is connected.
+
+    choice SERIAL_PROTO_TRANSPORT
+        prompt "Host protocol transport"
+        default SERIAL_PROTO_TRANSPORT_USB_JTAG
+        depends on SERIAL_PROTO_ENABLE
+        help
+            This board exposes the host COM port through the chip's native USB
+            Serial/JTAG peripheral (VID 303A:1001, "USB 串行设备 (COMx)"), not
+            through an external USB-UART bridge, so that is the default.
+
+        config SERIAL_PROTO_TRANSPORT_USB_JTAG
+            bool "USB Serial/JTAG (the COM port the WebUI opens)"
+
+        config SERIAL_PROTO_TRANSPORT_UART0
+            bool "UART0 (external USB-UART bridge, GPIO43/44)"
+    endchoice
+
+    config SERIAL_PROTO_TIMEOUT_MS
+        int "Host protocol idle timeout in ms"
+        default 15000
+        range 1000 120000
+        help
+            A session ends when no valid frame is received for this long, and
+            raw text logs resume.
+
+endmenu

@@ -1,0 +1,26 @@
+# Toolchains, generated builds and local evidence stay outside the public repo.
+**/build*/
+**/managed_components/
+**/dist/
+**/__pycache__/
+*.pyc
+*.elf
+*.map
+*.bin
+*.zip
+*.7z
+*.log
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+.vscode/
+.idea/
+node_modules/
+testing/
+captures*/
+handoff/
+firmware_backups/
+esp-idf*/

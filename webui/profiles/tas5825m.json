@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "bus": {
+    "enabled": false,
+    "sda": 9,
+    "scl": 10,
+    "hz": 100000
+  },
+  "ports": [
+    {
+      "port": 0,
+      "enabled": false,
+      "model": "TAS5825M",
+      "address": 76,
+      "functions": {
+        "startup": [
+          {
+            "write": [
+              0,
+              0
+            ]
+          },
+          {
+            "write": [
+              127,
+              0
+            ]
+          },
+          {
+            "update": [
+              3,
+              27,
+              10
+            ]
+          },
+          {
+            "delay_ms": 5
+          },
+          {
+            "update": [
+              3,
+              3,
+              3
+            ]
+          }
+        ],
+        "mute": [
+          {
+            "write": [
+              0,
+              0
+            ]
+          },
+          {
+            "write": [
+              127,
+              0
+            ]
+          },
+          {
+            "update": [
+              3,
+              8,
+              8
+            ]
+          }
+        ],
+        "unmute": [
+          {
+            "write": [
+              0,
+              0
+            ]
+          },
+          {
+            "write": [
+              127,
+              0
+            ]
+          },
+          {
+            "update": [
+              3,
+              8,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "port": 1,
+      "enabled": false,
+      "model": "TAS5825M",
+      "address": 77,
+      "functions": {
+        "startup": [
+          {
+            "write": [
+              0,
+              0
+            ]
+          },
+          {
+            "write": [
+              127,
+              0
+            ]
+          },
+          {
+            "update": [
+              3,
+              27,
+              10
+            ]
+          },
+          {
+            "delay_ms": 5
+          },
+          {
+            "update": [
+              3,
+              3,
+              3
+            ]
+          }
+        ],
+        "mute": [
+          {
+            "write": [
+              0,
+              0
+            ]
+          },
+          {
+            "write": [
+              127,
+              0
+            ]
+          },
+          {
+            "update": [
+              3,
+              8,
+              8
+            ]
+          }
+        ],
+        "unmute": [
+          {
+            "write": [
+              0,
+              0
+            ]
+          },
+          {
+            "write": [
+              127,
+              0
+            ]
+          },
+          {
+            "update": [
+              3,
+              8,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

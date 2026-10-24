@@ -1,0 +1,4 @@
+# Preserve source snapshot bytes, especially frozen source/object identities.
+* -text
+*.png binary
+*.jpg binary

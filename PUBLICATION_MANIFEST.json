@@ -1,0 +1,788 @@
+{
+  "schema": 1,
+  "repository": "liyer-miuko/esp32-s31-dsp-audio-bridge",
+  "firmware_reference": "0.254",
+  "binary_release": false,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 112,
+      "sha256": "522C0A00B41CF85ACD865528C17ED5E9C2233F214C84B0E70821D2672BE538DA",
+      "git_blob_sha1": "c19654b3f3c95e67573ec36c279abfbe1295c4a4"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "bytes": 856,
+      "sha256": "967070C2E7A8AFD0D49A2169148B28E7C5487972536560F1D1F1016F27FC3D58",
+      "git_blob_sha1": "3d3fe9e1edc486fdf1db655e0487e11e17aa4505"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "bytes": 288,
+      "sha256": "E1DBD13BC1B19242F08C296A1E054B75EDAC129107C072429E31D450A098A458",
+      "git_blob_sha1": "9bc32507194d3a41e33b8eba51f649d33bbf21e0"
+    },
+    {
+      "path": ".github/workflows/source-check.yml",
+      "bytes": 698,
+      "sha256": "2A33EBDF95096FD2C036C9634EB724EEC60194F39D06E9C8C76B6AD2E2417B65",
+      "git_blob_sha1": "de12226da30eefc2f9485fc60575c60d5c81b5ed"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 303,
+      "sha256": "B617E9BAD4F6BD083344235552AEA2E13129F339D7FF5B6F6BD59EA8A5728DA5",
+      "git_blob_sha1": "31918c139e844589099823778fd8087bdcb4e2d6"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1001,
+      "sha256": "5F549F1CA6BA3547FD5B159759A443012B6BE6E0434114621F708AE3305EB046",
+      "git_blob_sha1": "c5525b692031c60a553564566791b7e7189ca695"
+    },
+    {
+      "path": "docs/BUILD.md",
+      "bytes": 3298,
+      "sha256": "438FB6EDECF45D36CCA11752D49121D6BF7865863549BE5FF7CEE7D77AC263BC",
+      "git_blob_sha1": "ad59bd2f256f99d193bad46f7bf38892f668cf1a"
+    },
+    {
+      "path": "docs/HARDWARE.md",
+      "bytes": 1451,
+      "sha256": "C8B93170C1225EA027CF1A3FA6C047D41CB759A2E62E61635C1CFE2B9174C193",
+      "git_blob_sha1": "d249e089d1878cfe97a69ce71082ec9d0305aea4"
+    },
+    {
+      "path": "docs/images/webui-zh.png",
+      "bytes": 159946,
+      "sha256": "56BC37C3C63F65C1DCA21D42B3C94D90730947316D23A7B80D1A084898808F0B",
+      "git_blob_sha1": "f789646eadc71c739ee3ed3566487c94f5632053"
+    },
+    {
+      "path": "docs/LIMITATIONS.md",
+      "bytes": 1558,
+      "sha256": "C7AD33A85D5543EB5EB95FA123208A56E2349EDB18EB32B3A83209BB67AE165D",
+      "git_blob_sha1": "64d4df0d78f90941e2fa62359bd1195befc31dfa"
+    },
+    {
+      "path": "docs/PROTOCOL.md",
+      "bytes": 7340,
+      "sha256": "1F301BE02A4C93D46DD42764BD734391E7F3E58E2E949D4548DC4FFB68D9CB4F",
+      "git_blob_sha1": "26ee3e0cff8ffb6f61efc31153dc34be74cfc7d4"
+    },
+    {
+      "path": "firmware/CMakeLists.txt",
+      "bytes": 107,
+      "sha256": "426921F70315107F6C5A1F29FF2533294CDAB62F5DE0EEFBFA9920E5531029E1",
+      "git_blob_sha1": "4aad9d3d1cf3f6453f68cd922b5fbe73fb01201e"
+    },
+    {
+      "path": "firmware/components/amp_json/cJSON.c",
+      "bytes": 80399,
+      "sha256": "298581A04A36C0165DA4B0AADE235C23088CB2FAA58651D720EA2F3706ED0B0D",
+      "git_blob_sha1": "6e4fb0dd369cd905923da515be87ab06db6c1ee0"
+    },
+    {
+      "path": "firmware/components/amp_json/cJSON.h",
+      "bytes": 16394,
+      "sha256": "25B0145150D500498E4D209CEC69C18C42CF818BFFCC54690BE3B895A2A16DEE",
+      "git_blob_sha1": "cab5feb427725f8e5c82287f7fe59481b609b9b5"
+    },
+    {
+      "path": "firmware/components/amp_json/CMakeLists.txt",
+      "bytes": 134,
+      "sha256": "4E11604581EE3588E33F629461B0AF62B16D2A2796138F2091001F39F84FB42E",
+      "git_blob_sha1": "d490bf9a5dda748505aed02374bd83b1d2656267"
+    },
+    {
+      "path": "firmware/components/amp_json/LICENSE",
+      "bytes": 1084,
+      "sha256": "A36DDA207C36DB5818729C54E7AD4E8B0C6FBA847491BA64F372C1A2037B6D5C",
+      "git_blob_sha1": "78deb0406d713ab9730e3c2447be1abdbd70b9a2"
+    },
+    {
+      "path": "firmware/components/amp_json/README.md",
+      "bytes": 380,
+      "sha256": "732FE59224704C175874330C54DAC1E20EC4B3C2DBBFC5FFE39652950786E8CC",
+      "git_blob_sha1": "d5308c6ad6556e8a8f2d2ae3192d1ef343d5bf32"
+    },
+    {
+      "path": "firmware/components/amp_json/source_identity.json",
+      "bytes": 609,
+      "sha256": "2844C992085A1517DCC236CC8693DA81E608FC63230FF587838F400CA8CB04F0",
+      "git_blob_sha1": "75a34c2134f5c3430a72e1fcc7476ef71daf5da7"
+    },
+    {
+      "path": "firmware/dependencies.lock",
+      "bytes": 625,
+      "sha256": "B898AFE7051FD236316A17F60B41B07690E36A9C202A8262604347F83F3A31AE",
+      "git_blob_sha1": "19ada892e4e8233d667c8db34b057b8abc1c7532"
+    },
+    {
+      "path": "firmware/main/a2dp_audio.h",
+      "bytes": 14268,
+      "sha256": "DD32487E0FF44D2312917176DEF479426391C0755BB7F8F3F267D66158AC6C27",
+      "git_blob_sha1": "72307205178ae1b529a3632c1ef280c6d43549e5"
+    },
+    {
+      "path": "firmware/main/a2dp_audio_int.c",
+      "bytes": 70203,
+      "sha256": "E80360410624327837355FB2B740A0B179F01B9C7D50E8706D72D4A626BC0BD8",
+      "git_blob_sha1": "daea2ecfb8b202a572968a452aadd46bcf12c8aa"
+    },
+    {
+      "path": "firmware/main/amp_control.c",
+      "bytes": 16531,
+      "sha256": "D5D1F8357BDB27969D27786E4200E69C41F4230EA34FEC580A99A771FCB6DA42",
+      "git_blob_sha1": "88ef1bd67345e29b69dfa96d5e1ac5d4222347f5"
+    },
+    {
+      "path": "firmware/main/amp_control.h",
+      "bytes": 717,
+      "sha256": "0960A32950023FFEFBB65AD0A46CA913619EB04A12346ECA043315FBBF0995FB",
+      "git_blob_sha1": "79966ca9b2efd02a4ad1c017669eb14a529b7904"
+    },
+    {
+      "path": "firmware/main/amp_profile.c",
+      "bytes": 9313,
+      "sha256": "0579D2EDC4E719807DCE0F3901589BE8E112223AE8FD3B2E6E691604B86C2B0B",
+      "git_blob_sha1": "a922f64a7e02537f44b7c556649b6a63e57f2204"
+    },
+    {
+      "path": "firmware/main/amp_profile.h",
+      "bytes": 1828,
+      "sha256": "CD6794DED60CA7DC34E6E2E423B10B5964E65DC604724F959392FA6639141408",
+      "git_blob_sha1": "4cdaf6d62acb1ee4e2d8656b60efb6a3e2f821de"
+    },
+    {
+      "path": "firmware/main/audio_input_budget.c",
+      "bytes": 2930,
+      "sha256": "9ECE5262865D8E07DCE9F029AC6EF186EEDF7CC12EDFFB29AECA2BD30F755F65",
+      "git_blob_sha1": "7f076b3694e6907c25050d175701f8d0d5fb3665"
+    },
+    {
+      "path": "firmware/main/audio_input_budget.h",
+      "bytes": 162,
+      "sha256": "49E42F3822667EF5D5589189E8EFF7B74B380FA06111D91252EE3647FCBB12AD",
+      "git_blob_sha1": "92c162055fcc3076abbe550cdfad6329bf71455f"
+    },
+    {
+      "path": "firmware/main/ble_tuning.c",
+      "bytes": 12836,
+      "sha256": "AB7DA3B8C9D7E860FF7606F73F7C0FDE39065AD3542055379FE817EE0C7DC3BD",
+      "git_blob_sha1": "8ad011eb2b3dba37a0ffb6515e69183315543e2e"
+    },
+    {
+      "path": "firmware/main/ble_tuning.h",
+      "bytes": 1734,
+      "sha256": "BF6A2CEF7C6B12D828F97D59269A87A6F1885DF76C186473EDFC9A2EBF530242",
+      "git_blob_sha1": "ce20ef4d330857bf043c5d66fa0f7efa9b6fb105"
+    },
+    {
+      "path": "firmware/main/bt_codec_guard.c",
+      "bytes": 24862,
+      "sha256": "1C14B934384E18748E021B28EB5945E153059AF0A525BA0902EDED2180377CED",
+      "git_blob_sha1": "5005d895c732f780ca383130250ed0f98497bb0a"
+    },
+    {
+      "path": "firmware/main/bt_codec_guard.h",
+      "bytes": 416,
+      "sha256": "61C1B199D238852BE8BEE71F7ADC5C10145EF600DCB9F447DEDBAEC469629A2D",
+      "git_blob_sha1": "a4b24dfcf2501529bf36a9936f38339b796629c3"
+    },
+    {
+      "path": "firmware/main/bt_route_hold.h",
+      "bytes": 2010,
+      "sha256": "7113E8B06153DEE9D65D16DD5C0F528240E65FC6FD3EA47E397641A761EC37DC",
+      "git_blob_sha1": "36242f164e48f60a7e89dd88d609a58956eab4d5"
+    },
+    {
+      "path": "firmware/main/CMakeLists.txt",
+      "bytes": 2697,
+      "sha256": "7DD63789FE616BB374B61D571BE488EACD5FDBB977E743190D64459AD2ECE137",
+      "git_blob_sha1": "3f824ff359f121de47da80e2e03577d231dec17e"
+    },
+    {
+      "path": "firmware/main/core1_frozen.json",
+      "bytes": 412959,
+      "sha256": "D141B7CF35D9B9C409A72CB4AC1D09814FC5D33AAD5F29C0A9397A7EC9ABA5E3",
+      "git_blob_sha1": "685b2ea97e0c2be8e72b15ce25cda62f089744c9"
+    },
+    {
+      "path": "firmware/main/dsp_audio.c",
+      "bytes": 26575,
+      "sha256": "9B6D5A06D31CBB2F2D85E57CFFF94491E95F74A87EB35C06E3FD2447AA1B39D3",
+      "git_blob_sha1": "27735b8ca5ee27ead2303b85ca611b05e88a54fc"
+    },
+    {
+      "path": "firmware/main/dsp_audio.h",
+      "bytes": 7885,
+      "sha256": "01180B03E3D36F91AA77636D54FD733C926C23CAEFCE1B2695092277AFC40F32",
+      "git_blob_sha1": "b062481e6edb3e1fc1e84ceee66f3039b3e44f6c"
+    },
+    {
+      "path": "firmware/main/dsp_biquad_s31.h",
+      "bytes": 1472,
+      "sha256": "BB081C39AF587784ED5ACFD25D9AE4DAE809ACFC2534DAC54C0C9B16B35119BB",
+      "git_blob_sha1": "793f2a96783f338465f2894adf54c3c6b3b0196e"
+    },
+    {
+      "path": "firmware/main/dsp_biquad_s31.S",
+      "bytes": 3657,
+      "sha256": "1B890B9B56F8D894F8F1DD9EF2815550E4BE958DEEDF0A4ED943BF3DD11BE517",
+      "git_blob_sha1": "8aa7329ee0cee70c6642d5e680fc4a3209b82864"
+    },
+    {
+      "path": "firmware/main/dsp_config.c",
+      "bytes": 65929,
+      "sha256": "F37C976CBD74D82443B79B55CB2DD428F4ED1A331925236934FB21B581192E8F",
+      "git_blob_sha1": "954b95383c66c9a8a30f2e7fe48ab66ee8eaabf4"
+    },
+    {
+      "path": "firmware/main/dsp_config.h",
+      "bytes": 27593,
+      "sha256": "17040B7A75547DD20D4C7B44BFB222905E1DC7292E5CD0606B435A46DBAC7AEC",
+      "git_blob_sha1": "50340da13d027d2bc6bda1d90030ba2c5619d522"
+    },
+    {
+      "path": "firmware/main/dsp_engine.c",
+      "bytes": 39370,
+      "sha256": "1AA9DF405298209C0127B3BE3C340CEB19FB33736EF8BBF97CC4BBB9D6752BD1",
+      "git_blob_sha1": "8511792684a020586cf430f8dae37b2fb4aa5b76"
+    },
+    {
+      "path": "firmware/main/dsp_engine.h",
+      "bytes": 5114,
+      "sha256": "F3808ADF0B30EB21F1F2EB5DAB89B3187E64C13152407AA835920AAEB5E68A00",
+      "git_blob_sha1": "a5ecf52f6801c8c568d00fdc25ff40e80ecf3b3f"
+    },
+    {
+      "path": "firmware/main/dsp_filter.c",
+      "bytes": 5689,
+      "sha256": "00162C26E0485A8AF2AE1837A197B4219EB4E01A10E90A506EC67C4527939199",
+      "git_blob_sha1": "0441d0697624fbdb9b422a2331ac767de25d543e"
+    },
+    {
+      "path": "firmware/main/dsp_filter.h",
+      "bytes": 5239,
+      "sha256": "A9B0B4432C219195FA13F59E08483E93B288B239E6CE43CA9C5AC12FB878D2BC",
+      "git_blob_sha1": "514151fc14d1a1a4c0eb50a984f0e0c6c3b33d38"
+    },
+    {
+      "path": "firmware/main/dsp_version.h",
+      "bytes": 91138,
+      "sha256": "6DE2BB03E6938E70904BBD51E05591255EE82A82B6E2F8935A7CA7884292EAB1",
+      "git_blob_sha1": "9167f85486969a200f8bc9962e511e59619d3350"
+    },
+    {
+      "path": "firmware/main/hw_mute.c",
+      "bytes": 9143,
+      "sha256": "5C7B00A8090BD4AF5EEC36FBEE571A996989F0D64378344F38BA67CDD1DA4EC2",
+      "git_blob_sha1": "be41ef41ffd4d913df94de1776683fe9aae4605d"
+    },
+    {
+      "path": "firmware/main/hw_mute.h",
+      "bytes": 4126,
+      "sha256": "071B518A08D4DC88FD6F307B169FC40720EB210A306D3B2DC35E3BAE2F8DABD2",
+      "git_blob_sha1": "2834e634ef3def058327977996bcb5606878f9df"
+    },
+    {
+      "path": "firmware/main/i2s1_out.c",
+      "bytes": 8075,
+      "sha256": "B794EA36D281D1FC53609262CD9466776F4C2693464D6AA75498EDC402F73908",
+      "git_blob_sha1": "71c3daeab4ae423776e6471486eb5cb9e2125402"
+    },
+    {
+      "path": "firmware/main/i2s1_out.h",
+      "bytes": 2037,
+      "sha256": "E31301C702C281E01B60FCB206CDDD86929DB3ED756FF18CE49C7BE5A94DB91E",
+      "git_blob_sha1": "4caf48aed88ecadd03e33d7e1fb9f045a18939a8"
+    },
+    {
+      "path": "firmware/main/i2s_out.h",
+      "bytes": 1659,
+      "sha256": "8B50205FBA2E050E628821835481C94385F9F908867B999B809EC1331C1826DA",
+      "git_blob_sha1": "ef429acf7a66b0487bed3f675f9335b16c6f46c5"
+    },
+    {
+      "path": "firmware/main/i2s_out_v2.c",
+      "bytes": 26930,
+      "sha256": "A43174B4FBEBA861B27C47318E3D7031780DA4256D20AA810C32558A2199457D",
+      "git_blob_sha1": "f25f1115ab475df6235e9b14a2bd16460cd4af6c"
+    },
+    {
+      "path": "firmware/main/i2s_out_v2.h",
+      "bytes": 4898,
+      "sha256": "EC8BC6400BE165C77F9F6CFFBFA658EA6A83C14DF9B3767B5D01E716A6E9BF2F",
+      "git_blob_sha1": "0bc05525f0ea3e7fe691066bbea6de01d0228d72"
+    },
+    {
+      "path": "firmware/main/idf_component.yml",
+      "bytes": 58,
+      "sha256": "8D47253CEBE6D1BAE831AB46DB12C7B17F65BADC456A30BD4113CAF7FD3BBE83",
+      "git_blob_sha1": "ed4dec92653faffc0533d203567f50b9924b5241"
+    },
+    {
+      "path": "firmware/main/Kconfig.projbuild",
+      "bytes": 4989,
+      "sha256": "8AE8A473F9132E1CE1C0B28D0250368EE8BC4D58D88EDEF807CF7F1F414D19E7",
+      "git_blob_sha1": "d0fd0c79a50b83b8f6d3e2eea1c78ca438bcdb38"
+    },
+    {
+      "path": "firmware/main/pcm_dma_stage.c",
+      "bytes": 1243,
+      "sha256": "3C226782A3EBE5C7C38EE9ADD681ADD3CB54FCDCB3D0211ECD5EAC37DB5F9B5B",
+      "git_blob_sha1": "d98eceb3b60afcc9242644729eb7436eb18a1fdc"
+    },
+    {
+      "path": "firmware/main/pcm_dma_stage.h",
+      "bytes": 738,
+      "sha256": "D9402305FB650D704B5E18A2EC0ADF5B6275D95D9267E47D94ECEB77E18AE95B",
+      "git_blob_sha1": "01ff4b5351a048efe92c085f814f956b6212b99b"
+    },
+    {
+      "path": "firmware/main/serial_proto.c",
+      "bytes": 54848,
+      "sha256": "11FFDD8D5943F22D34A617570B2883A758BC0A4F8B708185C89E7D3EBA30707B",
+      "git_blob_sha1": "3b338dbe7139c1fdbc72e22dfe70d3376b26e184"
+    },
+    {
+      "path": "firmware/main/serial_proto.h",
+      "bytes": 1166,
+      "sha256": "0CE9B66C6C3D722697B200F04E60BFD375E81B772082C89E861C0812A53E2198",
+      "git_blob_sha1": "010413a6570272adbac0b5049243ebcf8b20c76a"
+    },
+    {
+      "path": "firmware/main/tusb_config.h",
+      "bytes": 2157,
+      "sha256": "355AABB91A30611E6B3AC8B6D37E875B5595424ECA6A11ADF9C3F8AE2FCEC8FC",
+      "git_blob_sha1": "eecaf357c75e9855274f0b49602ab63228a5c9c4"
+    },
+    {
+      "path": "firmware/main/tusb_config_uac.h",
+      "bytes": 4126,
+      "sha256": "47BC7C2520358F2F37FF40CBD8AD4FBDE1FDB52E2314DD0739F81D2772A401A2",
+      "git_blob_sha1": "f64387bf604015d71c4138ba347b0845661811f5"
+    },
+    {
+      "path": "firmware/main/uac2_audio.c",
+      "bytes": 162160,
+      "sha256": "C83DBB4260B8FDDAD7A614772B7367897DF7C8065D3FB1F767EC9CD71F967960",
+      "git_blob_sha1": "6c6924dc5beb07e1b20fe11aa7c16e402ef83dae"
+    },
+    {
+      "path": "firmware/main/uac2_audio.h",
+      "bytes": 6706,
+      "sha256": "007F810215773BB83B8580C221138368AA6ED99F3F5ABD7185DCEFE2A10BEBF4",
+      "git_blob_sha1": "19fe63e556c78af8312587ba30b0d275be5ed1ac"
+    },
+    {
+      "path": "firmware/main/uac2_descriptors.h",
+      "bytes": 6097,
+      "sha256": "B44AA0DAC3542772958AF8E3FF73BC4CC3CC96EF5B26BB586DAB3A7192EC0183",
+      "git_blob_sha1": "db336c4369ce517b446e007f1dea3fa91071ac40"
+    },
+    {
+      "path": "firmware/main/uac_audio.h",
+      "bytes": 927,
+      "sha256": "B13D36D0E4722A8C4192A857F84980849FAEC3AE94ADF03C3F378AA884CF16BC",
+      "git_blob_sha1": "d88298ae93b35a8d00749aaf953dfb988a999b81"
+    },
+    {
+      "path": "firmware/main/uac_bridge_main.c",
+      "bytes": 5659,
+      "sha256": "672E6F1BC61BE3D8EBDD8435FD47E9163A4B14E5AEDDCDF3A6031E1432B445B6",
+      "git_blob_sha1": "bc75a3184df2f907b9305b546be1227d9a0954df"
+    },
+    {
+      "path": "firmware/main/uac_config.h",
+      "bytes": 4123,
+      "sha256": "2AC1A90CC54242FA8F1679C02AE0F00712DEC8971FE407DFDF71BD1EA78EA704",
+      "git_blob_sha1": "b47f4a6fbc4b07bfc1d9c42726149e6eb7de94e3"
+    },
+    {
+      "path": "firmware/main/uac_descriptors.h",
+      "bytes": 20462,
+      "sha256": "3F6C8B28EB77D1B277E8CF67F0B3954AE694A96994C60C0CCB76BE6A4BCB9FB6",
+      "git_blob_sha1": "93e7b415456f9a407d068eac89cb32e41b50e753"
+    },
+    {
+      "path": "firmware/main/uac_usb_intr.c",
+      "bytes": 1040,
+      "sha256": "CFC73BE5BCEE2B995BF4B1CFD2698A8F358A0FB216DCD9A1019F46A14792B933",
+      "git_blob_sha1": "530e1bc66bd22af4a6952530db8bac55d26c1eea"
+    },
+    {
+      "path": "firmware/partitions.csv",
+      "bytes": 589,
+      "sha256": "85837105B35337AFAA26F7E5EA66BE2A4243B03F3DC4CE51C2E13E1B8AA17A6F",
+      "git_blob_sha1": "abac60dd7b0539bd8d791c2cbe31b0aa2250d630"
+    },
+    {
+      "path": "firmware/releases/0.254-identity.json",
+      "bytes": 504,
+      "sha256": "F9BDC11FBDAC297D1FB3E63E13B7152F99DB9201756F774C403E720D42356DC8",
+      "git_blob_sha1": "c60c0bf1e798377b9fa288ba4dd3994ce9e6db40"
+    },
+    {
+      "path": "firmware/releases/README.md",
+      "bytes": 1506,
+      "sha256": "18761AAA28BA02FE9F15281D8CA6EB5D15059A605CA899F61C521B50BD5DD031",
+      "git_blob_sha1": "9862538f616a276e79cf779fb793c48e9f477af9"
+    },
+    {
+      "path": "firmware/sdkconfig",
+      "bytes": 139227,
+      "sha256": "5195422BF16D47F774CB9FAF4F0094AD00697F70C44EC36DFD5AAB7212FD2219",
+      "git_blob_sha1": "62af063223baa02f54821d2549dd533ef2c11355"
+    },
+    {
+      "path": "firmware/sdkconfig.defaults",
+      "bytes": 3521,
+      "sha256": "D49D9E376A8AD52F977F36471353D06F20BA403D889902635C8A636207996A86",
+      "git_blob_sha1": "d3071beff3b44c18770868488f917ce8b743bed3"
+    },
+    {
+      "path": "firmware/tools/build_a2dp_fork.ps1",
+      "bytes": 689,
+      "sha256": "926C9E86CE081A8FE2AB5CFEFE78101507C8C3102731E7393B26EEF9D2553123",
+      "git_blob_sha1": "8606928ae928d8ae87aaa5202dbde2c5b4409936"
+    },
+    {
+      "path": "firmware/tools/check_core1_frozen.py",
+      "bytes": 3126,
+      "sha256": "72EFBE9D6B554692DF50E6C005E35BA89B124F623EDB264819E8DBD051A03659",
+      "git_blob_sha1": "ec2eb4c25022724f3c161fb9b7420d5bc159a474"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 4563,
+      "sha256": "C0EA4A896D2C8C394B29F9427589996DB826CD501C512279FF0ED3EF48FABBE5",
+      "git_blob_sha1": "5ecc88cfc4b1cff608ed640efe913c9dd97935c3"
+    },
+    {
+      "path": "LICENSE_SCOPE.md",
+      "bytes": 2790,
+      "sha256": "2F5194AEA1403227440305359EC6F0399F0E36695CA14AE4A6B637F39A27DD0F",
+      "git_blob_sha1": "9b6abff7e155ca4ac31a640ade71633cedcd13f0"
+    },
+    {
+      "path": "LICENSES/Apache-2.0.txt",
+      "bytes": 11358,
+      "sha256": "CFC7749B96F63BD31C3C42B5C471BF756814053E847C10F3EB003417BC523D30",
+      "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+    },
+    {
+      "path": "LICENSES/cJSON-MIT.txt",
+      "bytes": 1084,
+      "sha256": "A36DDA207C36DB5818729C54E7AD4E8B0C6FBA847491BA64F372C1A2037B6D5C",
+      "git_blob_sha1": "78deb0406d713ab9730e3c2447be1abdbd70b9a2"
+    },
+    {
+      "path": "LICENSES/LGPL-2.1.txt",
+      "bytes": 27032,
+      "sha256": "1E7E6BAE5A5BDE32F1AE5A7C37A082D1AB03CF89354F7F936AC40BE9E39A6531",
+      "git_blob_sha1": "3394995abc5463238286bc53ce7608839b5d0ba7"
+    },
+    {
+      "path": "LICENSES/TinyUSB-MIT.txt",
+      "bytes": 1094,
+      "sha256": "F878D62E47E693EA64160218EDB1B9B4755F4839A3179E5BEF4A6B0359399431",
+      "git_blob_sha1": "0680c2f055bf770cad5a44321db41ed0f8fb0f36"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 3694,
+      "sha256": "2B5D46D8010E03F41FE04867DC81BA342B40ABEB9B172AFB4DD5E3F45FBC51C2",
+      "git_blob_sha1": "ea61e2e83fe02451a471fcb79aabab9603d83f7c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5329,
+      "sha256": "CA5077A9982E13DEB9670C3C2DE6B4563B6A72701C638D9819FA4F548E2999B5",
+      "git_blob_sha1": "92e29cbd05ea53b6cb776ad5e45dd91ecb440670"
+    },
+    {
+      "path": "sdk/manifest.json",
+      "bytes": 17945,
+      "sha256": "1738C065813D1CCD518009DF2E742B8BA49732F0B7E6D3EDC6B82C247448C4C6",
+      "git_blob_sha1": "1442ca89934ed87ef0835912aa3d38b447034cd6"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/api/include/api/esp_a2dp_codec_policy.h",
+      "bytes": 7806,
+      "sha256": "D16C30D9DFD5C87F6A9A720BBA4C9CAAC3E76A7EA6A92CF7BC260D9866FAAEAD",
+      "git_blob_sha1": "fe31df5783724b33f218d87bad6dd524acd42dc8"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/bta/av/bta_av_act.c",
+      "bytes": 78760,
+      "sha256": "FC7A8B9FC91BF7557AE3CBB17F32B8A4C60837130923E8BFACB7E92BA6A4B3A7",
+      "git_blob_sha1": "47e005ded9fca32d33414d1830034f6cf9b7f13b"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/bta/av/bta_av_main.c",
+      "bytes": 58686,
+      "sha256": "651847D07478EF9FE0DB7F9C0700A200AFD3EA03F42BAFC31598EBD6254C950F",
+      "git_blob_sha1": "45639b7ac993454d2229002df6168091cf2f588e"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/btc/profile/std/a2dp/bta_av_co.c",
+      "bytes": 52349,
+      "sha256": "CFD90F65D10A2FC23F354376C8BC29E64F8BB2AF234EC988C06538880C73557B",
+      "git_blob_sha1": "c41f2718373995e18d92537b75b207b2f2d05203"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c",
+      "bytes": 42956,
+      "sha256": "D7C4650DB3976B60DDD16DB024F21C16A6669186ECE970722BDDE41232C72F76",
+      "git_blob_sha1": "e241aaa101ea84b77fd049d5774afd10a3733a8b"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_av.c",
+      "bytes": 64878,
+      "sha256": "B5F9C37E8BD16FAF0F55C08BC0A7C32AFB47F29EFFD6EEB3DFB0915B2D6BAB42",
+      "git_blob_sha1": "26daac71d2ff357d0cbf87ef309152aa9434a9bf"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/CMakeLists.txt",
+      "bytes": 28420,
+      "sha256": "41886659E4477C23FE94FDFF22974BEDAE0D938A046BDA4DD250E869A2633A7D",
+      "git_blob_sha1": "be6fb72377f9105399767f47eae0a914d7bc9d81"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/common/include/common/bluedroid_user_config.h",
+      "bytes": 27428,
+      "sha256": "E0FD969D446FC0010313E003A7F6F61040A2E2CB2D3F99D6649B044FE9C5A909",
+      "git_blob_sha1": "9a18ce52c0164ba43ab0a08b5ec2365c27e822e6"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/external/libfreeaptx/CMakeLists.txt",
+      "bytes": 470,
+      "sha256": "200A18FF0C7ADD4CE92ACF40184F1312DD1E81DFF32C0BE4E1BABD83E4EF293D",
+      "git_blob_sha1": "22191e04f9416ef4ba977c74777a7a098572fff4"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/external/libfreeaptx/main/CMakeLists.txt",
+      "bytes": 312,
+      "sha256": "738C19BF3832846FF20CC70119D032D1EAE2D89251ACCB26E06EA6D46AA1DAA4",
+      "git_blob_sha1": "272a9d1e603f2553efcd0e1a0c59892d5e282114"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/external/libfreeaptx/main/COPYING",
+      "bytes": 27032,
+      "sha256": "1E7E6BAE5A5BDE32F1AE5A7C37A082D1AB03CF89354F7F936AC40BE9E39A6531",
+      "git_blob_sha1": "3394995abc5463238286bc53ce7608839b5d0ba7"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/external/libfreeaptx/main/freeaptx.c",
+      "bytes": 58410,
+      "sha256": "823C456BE327EE57151094179E07D1193BEA6D46A9759A0533C057B959D96505",
+      "git_blob_sha1": "ac94172cde9b0e2e76d47fdae5cb85d514cf9f43"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/external/libfreeaptx/main/freeaptx.h",
+      "bytes": 7149,
+      "sha256": "469FDCE4CE03AFB149F2BE5496D75BAA89E671D01DD6FCD5BDC2073013B2AD0E",
+      "git_blob_sha1": "c8f36fc754d67ab8e7b6f595847ac7585f8a231f"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/Kconfig.in",
+      "bytes": 66968,
+      "sha256": "E95023A0336B442A9BFC657AA669F819971D1EFC52236848F19DC087842533B9",
+      "git_blob_sha1": "1c2e2a4d466e4298bd77373530c00fe98b0e09bd"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2d_sbc_decoder.c",
+      "bytes": 9377,
+      "sha256": "B6CB965ADE0ADEFEE85F8CA1C768C773EC7D87CF73C958952FBB9223DE2A3400",
+      "git_blob_sha1": "868b393b63b26503321f41039f12ee790036a1bd"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_aac.c",
+      "bytes": 12454,
+      "sha256": "21FB8A50DF05035AD4DC216D095B69B3E118D47EF5BC420A9F697CB90FC54776",
+      "git_blob_sha1": "1040ae448aefeb709aba860be0d51d9d50fa2172"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_aac_decoder_custom.c",
+      "bytes": 11392,
+      "sha256": "5994FD0F76FABE1588EB1DE7AFC2EEE058F94EA1CB59A418962955432EC35390",
+      "git_blob_sha1": "eb65e374eab182c2108ac2efee1c737659e8319f"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_codec_config.c",
+      "bytes": 8929,
+      "sha256": "C03863A3AC8940CFF007733920EFC250E1615C7DC8F91DB0195025D41219A219",
+      "git_blob_sha1": "63b2931fe5fa296ea095f3a8f162e14546d7d851"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_sink_policy.c",
+      "bytes": 26726,
+      "sha256": "D8B2A130B94F8B9C94B24098D22F7BC583B010FF4BE3088F051688721CA01F71",
+      "git_blob_sha1": "ecaef5f2fbbaab2abc99d619506ff1d44f380b7f"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_aptx_decoder.c",
+      "bytes": 13733,
+      "sha256": "E29E677752773942CE0A45A6EEC967BA4417A9573D034E646110F41A442E605F",
+      "git_blob_sha1": "4b1b0d854fabf990727a684246edc32b8ccaa30a"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_aptx_ll.c",
+      "bytes": 11139,
+      "sha256": "979F07136C8CBAF2DC69DE6271BF2120A5F9615914FA2CCA0F37FE704CCC882A",
+      "git_blob_sha1": "859dceb545f08d2d5705fd63cf54b7ee435c5344"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_lc3plus.c",
+      "bytes": 8890,
+      "sha256": "DC5B1AC1CA8D28DC7A5E947FBD3D781696E09063D6E7D4A41EEA31AEA4474968",
+      "git_blob_sha1": "a6907eb335f0c2d7f4f29c3ad2541eec57cbdd45"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_lc3plus_decoder.c",
+      "bytes": 5182,
+      "sha256": "D830FF0DDE0A333D6CA7A47BE6E6DE6042C14EBC15ECC732EF089A9ABB8737F9",
+      "git_blob_sha1": "6942244a2017478fd635ff80b5ab5ea9204433e2"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_ldac.c",
+      "bytes": 11500,
+      "sha256": "D18CF00FBC95EAD8130CF63DF86E1967CF2D03A79617980DA6F29EA87463DF98",
+      "git_blob_sha1": "1881f4c1df5d849c22f90d881f4a0d94de65a6d6"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_ldacbt_decoder.c",
+      "bytes": 14543,
+      "sha256": "54396533B2E7557A2532084956AD9186D5E463A1AE1437F2E67DC053C670CAE2",
+      "git_blob_sha1": "c47188138024c2cad422b70820541ace01d0ed32"
+    },
+    {
+      "path": "sdk/overlay/components/bt/host/bluedroid/stack/include/stack/a2dp_rtp_bounds.h",
+      "bytes": 1386,
+      "sha256": "F3ED682C539A939FEA05C147C597793BEF0739F233908AAEC86DC0B2DCF0AC35",
+      "git_blob_sha1": "71db52f5f123b6623aa59a0a1cc02c76824ad1d0"
+    },
+    {
+      "path": "sdk/tinyusb-overlay/LICENSE",
+      "bytes": 1094,
+      "sha256": "F878D62E47E693EA64160218EDB1B9B4755F4839A3179E5BEF4A6B0359399431",
+      "git_blob_sha1": "0680c2f055bf770cad5a44321db41ed0f8fb0f36"
+    },
+    {
+      "path": "sdk/tinyusb-overlay/src/class/audio/audio_device.c",
+      "bytes": 78534,
+      "sha256": "47F57962FA4C21D29C341A61B26A42B0B7F63FAD4693702DE634C6703FE9C6FF",
+      "git_blob_sha1": "21b3accfd576ec033c1ed281bdc29f5619e41373"
+    },
+    {
+      "path": "sdk/tinyusb-overlay/src/portable/synopsys/dwc2/dcd_dwc2.c",
+      "bytes": 44868,
+      "sha256": "0D01A239F278B4077C5D25B4891E39AE85F4B07E63E8E96310D60441B060ACA5",
+      "git_blob_sha1": "5fd343971c92a6e0839bbf455903068b1ea04358"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 809,
+      "sha256": "FEE0AB96AA020142863975CDC18CD11AF78F62A135671B13F487D61E13EB0F36",
+      "git_blob_sha1": "c5673f2bb123c1e38f12fe34e933405e332dd117"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "bytes": 13881,
+      "sha256": "A4FC621B9C68158410C57723B80FB8D2E6E6D945450986CBBF962384A5562EC4",
+      "git_blob_sha1": "d211797de9b4b9228a44d540efca651cd07fee89"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 3110,
+      "sha256": "C27DB28C2BEDB318CD0A1640682A7389C9F05C33B524852CF22EEDBC0926DD61",
+      "git_blob_sha1": "f08a9b27f17267aaad04a07eae1f05d78a4c80f7"
+    },
+    {
+      "path": "tools/check_snapshot.py",
+      "bytes": 1972,
+      "sha256": "CD33A09F3BC1F1DD13530C7D74F89DD0AF2B295AE7D6C29E8199D7B29D0A8791",
+      "git_blob_sha1": "4fed8b6feef79e7c906b1d4f5e841e47f67969d8"
+    },
+    {
+      "path": "webui/amp-control.js",
+      "bytes": 18842,
+      "sha256": "CFACBA81C7D4A4D0AEA915B5E56413AB2BFD2E29E7ED52F2704EF0835A952217",
+      "git_blob_sha1": "81ecf2dac94823d378bf0ec191d7db56350abdd0"
+    },
+    {
+      "path": "webui/app.js",
+      "bytes": 138693,
+      "sha256": "7A787F23B84F12E1EE7C26ACC2286005F45808036AFE0F30421E5CFC957E9721",
+      "git_blob_sha1": "7370510bac0e965f0ca2ea8dae93e788c87f6d9b"
+    },
+    {
+      "path": "webui/base.css",
+      "bytes": 37405,
+      "sha256": "D511F2FA1D4115A587DEC7669BBA68343D01048F83ED6D023A32C763B0DA1856",
+      "git_blob_sha1": "cc132471f18577c36f603ef46a432a9cfa3334a2"
+    },
+    {
+      "path": "webui/build.cjs",
+      "bytes": 2053,
+      "sha256": "FE13EE874998217DA505FC6907E2C2D920B47CF53152663DB3159A908E12FCC5",
+      "git_blob_sha1": "0b3452a3e3cc24f18bf62c2a35e1e6ab5b5008a3"
+    },
+    {
+      "path": "webui/config-codec.js",
+      "bytes": 5047,
+      "sha256": "C1AEA73B62A96CDF2CFF762490353E86DDA197D30D1F289914351D16F060ADE3",
+      "git_blob_sha1": "3471c8ed0a4218a68fff039f53df9734c13851ed"
+    },
+    {
+      "path": "webui/console.css",
+      "bytes": 14157,
+      "sha256": "545B9718F067F86402319133F95A1535C2FCDD7C51C6084DDD7A85FB94246EC4",
+      "git_blob_sha1": "d768b1fa7a2044e036bb07da4dd9a97ad27bb52f"
+    },
+    {
+      "path": "webui/console.source.html",
+      "bytes": 20336,
+      "sha256": "FC3E8B50EC7187B3BF8C13CF56D1826164405342C77B05F20677F9F782A54321",
+      "git_blob_sha1": "f357b3e4a2afe844a8ced7f7dfac035e68b46ba9"
+    },
+    {
+      "path": "webui/dsp webui.html",
+      "bytes": 276809,
+      "sha256": "680EF0950279BC939A5A65FC3F2F8E4E2A8958BD842769B24821E6334E93497E",
+      "git_blob_sha1": "d5e801f74583fc2aa65b2cb865e0fd94c07e30ee"
+    },
+    {
+      "path": "webui/i18n.js",
+      "bytes": 4136,
+      "sha256": "D1DD76BD00FA8EFD1C2DF2F8B67C97800CBD2C17C83F80BB2F23A9E09685A869",
+      "git_blob_sha1": "d7b659cf00bca9c28f0c8b754ea475729d414131"
+    },
+    {
+      "path": "webui/locales.js",
+      "bytes": 38317,
+      "sha256": "D1401D90B9384CE7ACCE0E76E630E0F143A8FE9BA1F8F99179B6EDD865EE046C",
+      "git_blob_sha1": "dbecce5bbef87e669f441f3ccd49a6d56653214e"
+    },
+    {
+      "path": "webui/profiles/tas5825m.json",
+      "bytes": 2893,
+      "sha256": "AD394BB4CCC69069D65D090A061CC111EB8D2054724CDAD3DE37EA8393DCB649",
+      "git_blob_sha1": "2d7faecac2587575fb502810acb60b835965b0d9"
+    },
+    {
+      "path": "webui/profiles/tas5828m.json",
+      "bytes": 2893,
+      "sha256": "E49E842C195A7295FF7C9DAD2378254009CFDADDD92C68B55B356202EBCDED7E",
+      "git_blob_sha1": "e923bab35a1affa5f1c08690e405e81907c69fe2"
+    },
+    {
+      "path": "webui/README.md",
+      "bytes": 984,
+      "sha256": "BCE04875AC656263F497E8281C43AD4ED524DB1EDCAB577E05406D95E98BF822",
+      "git_blob_sha1": "b3f3cb9ffa1a6ce4d3d34aa0e922f20059c86a8a"
+    }
+  ]
+}

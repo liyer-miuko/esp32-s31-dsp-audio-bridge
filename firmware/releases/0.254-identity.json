@@ -1,0 +1,19 @@
+{
+  "version": "0.254",
+  "host_artifact_identity_only": true,
+  "not_device_readback": true,
+  "artifacts": [
+    {
+      "artifact": "uac_bridge.bin",
+      "bytes": 2189552,
+      "sha256": "2C616963D891D5390A25D3FD5F0F5129A4B6BC77BB02BA6D581E2BE465B0DC1A",
+      "distributed": false
+    },
+    {
+      "artifact": "uac_bridge.elf",
+      "bytes": 18299808,
+      "sha256": "AA9DC28A62881CAAE1057BAE74BA90B7B0820650F7F24E5609601AEDE93F5D50",
+      "distributed": false
+    }
+  ]
+}

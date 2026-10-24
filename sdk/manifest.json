@@ -1,0 +1,378 @@
+{
+  "base_repository": "https://github.com/WillyBilly06/ESP32-S31-A2DP-Codecs",
+  "reference_commit": "71071a783811799d2977e4e87f733acdc2220c29",
+  "base_directory": "esp-idf-v6.1-codecs",
+  "reference_status": "Per-file base SHA values are the authoritative comparison; not a claim that the complete local SDK equals this remote checkout.",
+  "complete_reproduction": false,
+  "entries": [
+    {
+      "path": "components/bt/host/bluedroid/api/include/api/esp_a2dp_codec_policy.h",
+      "bytes": 7806,
+      "sha256": "D16C30D9DFD5C87F6A9A720BBA4C9CAAC3E76A7EA6A92CF7BC260D9866FAAEAD",
+      "base_sha256": null,
+      "published": true,
+      "license": "PolyForm-Noncommercial-1.0.0"
+    },
+    {
+      "path": "components/bt/host/bluedroid/bta/av/bta_av_act.c",
+      "bytes": 78760,
+      "sha256": "FC7A8B9FC91BF7557AE3CBB17F32B8A4C60837130923E8BFACB7E92BA6A4B3A7",
+      "base_sha256": "61FB3890EDC78AB0F9D1975EDD96E220881E01B823B44B5ECE8B7A00A91AF777",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/bta/av/bta_av_main.c",
+      "bytes": 58686,
+      "sha256": "651847D07478EF9FE0DB7F9C0700A200AFD3EA03F42BAFC31598EBD6254C950F",
+      "base_sha256": "C63C033E679E188B355C993DD467CBBBC75DF3A7D176A5BB5021BA557B43D013",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/btc/profile/std/a2dp/bta_av_co.c",
+      "bytes": 52349,
+      "sha256": "CFD90F65D10A2FC23F354376C8BC29E64F8BB2AF234EC988C06538880C73557B",
+      "base_sha256": "161B6C0C01BDF2CF61DE9B2E85CEB04CCFEA34FFC3EB68CC79D25769E730D1F6",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c",
+      "bytes": 42956,
+      "sha256": "D7C4650DB3976B60DDD16DB024F21C16A6669186ECE970722BDDE41232C72F76",
+      "base_sha256": "D496BD096AA8700BEB78B43288F9875377D2E92B0981C6A38D3FC9848B93DE83",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/btc/profile/std/a2dp/btc_av.c",
+      "bytes": 64878,
+      "sha256": "B5F9C37E8BD16FAF0F55C08BC0A7C32AFB47F29EFFD6EEB3DFB0915B2D6BAB42",
+      "base_sha256": "93DF96E413F95F19224320B8DA39F08C20522D61591C99BCD4F8874C5CD92E58",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/CMakeLists.txt",
+      "bytes": 28420,
+      "sha256": "41886659E4477C23FE94FDFF22974BEDAE0D938A046BDA4DD250E869A2633A7D",
+      "base_sha256": "D46E006224F9BB355B8748471C5663E5C493D5EA4E2D680F2AF124DCDA43515E",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/common/include/common/bluedroid_user_config.h",
+      "bytes": 27428,
+      "sha256": "E0FD969D446FC0010313E003A7F6F61040A2E2CB2D3F99D6649B044FE9C5A909",
+      "base_sha256": "3E4CAC662A590A72EB63EEC9B8AAA5C0C3D828E919DF3FBB48D278633CF6AEE4",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/lhdc-v5/lhdc_dec.c",
+      "bytes": 72710,
+      "sha256": "E7732F6F24035EEC52E18EBC44194215391B863E7E6DDC364683566763B05292",
+      "base_sha256": "D2CB5CDA9162E5526577533BD2F51D027AA897D23081C424557E005DE587A0C7",
+      "published": false,
+      "reason": "Disabled LHDC implementation omitted"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/lhdc-v5/lhdc_dec.h",
+      "bytes": 4743,
+      "sha256": "5368D9096C2340FB327D20F07B34D414285679AC14C2D95B2B5C80305AF54A94",
+      "base_sha256": "F4EBE0695E003F665B21A54E99C3D5DD84B9E70F2A10E287565676444813FFA3",
+      "published": false,
+      "reason": "Disabled LHDC implementation omitted"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/lhdc-v5/lhdc_dec_internal.h",
+      "bytes": 5117,
+      "sha256": "ECFA940BB86B17696CA87837A9E1B027A77541D5884C2A26250E58A584B0A868",
+      "base_sha256": "DF0BC107608E1C511755A6558105C42B0202B7F8051D1505E8D6456EC2192810",
+      "published": false,
+      "reason": "Disabled LHDC implementation omitted"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/lhdc-v5/lhdc_imdct.c",
+      "bytes": 40906,
+      "sha256": "D2008FF318EB48E0456BC9C1BF0C039B262D33632BAE5279E197A067E58751E0",
+      "base_sha256": "1E2559EFEC1DC14CDD2A21CE88037EC42C2AFC2D84A7C127C468DD1B0090BA39",
+      "published": false,
+      "reason": "Disabled LHDC implementation omitted"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/lhdc-v5/lhdc_imdct.h",
+      "bytes": 1511,
+      "sha256": "A413020B01ABA42049D11612A03B3EB3072D05E333B4B6E6270AC1FC054D8C03",
+      "base_sha256": "0A6180F5D40370DA02817FB082FD4CEED485C955174285B2E1FD575D957FA9DE",
+      "published": false,
+      "reason": "Disabled LHDC implementation omitted"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libaac-lc/aac_decoder_helix.c",
+      "bytes": 6818,
+      "sha256": "69930621C5031CEE6C50DFAB55446EF5662591602AC50B702646AADAF9A148DD",
+      "base_sha256": "B14F5CC672797A5F151D25C49D1E285BF0F561D50006D97DABE6D982D1D5C87F",
+      "published": false,
+      "reason": "Helix-related wrapper withheld with unresolved combined distribution"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libfreeaptx/main/freeaptx.c",
+      "bytes": 58410,
+      "sha256": "823C456BE327EE57151094179E07D1193BEA6D46A9759A0533C057B959D96505",
+      "base_sha256": "6ED248B420EA7FE38DB7A0B0A2C63F20F64556AA46323BE4561EDF06A0223B7F",
+      "published": true,
+      "license": "LGPL-2.1-or-later",
+      "source_sha256": "2B50837405867F980C0A24BBF091A0314B9EF9F0CAC416EDF95FDCE57C0B5B97",
+      "publication_change": "Prominent LGPL modification notice; no functional change"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/bitreader_fast_ldac.h",
+      "bytes": 2747,
+      "sha256": "AE437F8F7366FBDD76DD23FD043900D87A3E9B1362AF04A1B367053B863046AB",
+      "base_sha256": null,
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/decode_ldac.o.c",
+      "bytes": 4475,
+      "sha256": "328902189E1E9DE3AACF324C5AAB9D3AFD9F3D8FBB1EDC54A1E4A9DC3AC334A6",
+      "base_sha256": "BD1DDB45493E9EBE54BF6CA76F28E34C47BFA15AB6851250E93DB6C9E4A8D87F",
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/dequant_fused_ldac.o.c",
+      "bytes": 1600,
+      "sha256": "DC684EAB46F53783EA782BA5941800CDD202513BD193C9BDF1736C4E842B4C3A",
+      "base_sha256": null,
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/imdct_fast_ldac.o.c",
+      "bytes": 4549,
+      "sha256": "303729564F4B8841488A0F8F7C2AF42DFAEA9E53CF791907B5BAF405A59CF315",
+      "base_sha256": null,
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/imdct_fft_ldac.o.c",
+      "bytes": 6254,
+      "sha256": "A66D4B2AB1672563ECB37143E6192962F395FEC64B9D7C661D82A72D0F2BD7EF",
+      "base_sha256": null,
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/imdct_fft_tables_ldac.h",
+      "bytes": 12921,
+      "sha256": "3315D65A042D4697151C4526CF22109A05819E0F10F7530DCA14C160AD1CAB07",
+      "base_sha256": null,
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/ldaclib.c",
+      "bytes": 1199,
+      "sha256": "5CEDD5B250C142DE769B20F582FB2A762C62F683B2668516CF1377665A6ED504",
+      "base_sha256": "C74DD85A389382FA93275561C9703A4FE14AC476E07DC3513472921F9CC3CB04",
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/ldaclib_api.o.c",
+      "bytes": 13795,
+      "sha256": "E62C5AB7E801F449B394BFAA487DA31D8023A63F1FC04337B66E38EA0C93D067",
+      "base_sha256": "9378BA99813666980D2DD3AA235C8F87709B2855950BC166B63E87507AE31B07",
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/setpcm_fast_ldac.o.c",
+      "bytes": 2903,
+      "sha256": "8DD3C5835DAB358B4599706AD162F72D56D999C60351B12167749DE7A3AB211B",
+      "base_sha256": null,
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libldac-dec/src/unpack_fast_ldac.o.c",
+      "bytes": 11680,
+      "sha256": "C0869B6DA1AC9E501293D9559680C13CB81354D8F8D682A1B47DA566FDD72C1A",
+      "base_sha256": null,
+      "published": false,
+      "reason": "LDAC implementation redistribution license unresolved"
+    },
+    {
+      "path": "components/bt/host/bluedroid/Kconfig.in",
+      "bytes": 66968,
+      "sha256": "E95023A0336B442A9BFC657AA669F819971D1EFC52236848F19DC087842533B9",
+      "base_sha256": "FBD831C699385E1297F4A7E03C3D0318CED589F0554288C4880BCB12D958A492",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2d_sbc_decoder.c",
+      "bytes": 9377,
+      "sha256": "B6CB965ADE0ADEFEE85F8CA1C768C773EC7D87CF73C958952FBB9223DE2A3400",
+      "base_sha256": "9CC7F6FB238F31F3DCBC83CD686BF2FF0A68C154FC9999CA923F6908D90242B5",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_aac.c",
+      "bytes": 12454,
+      "sha256": "21FB8A50DF05035AD4DC216D095B69B3E118D47EF5BC420A9F697CB90FC54776",
+      "base_sha256": "C1370127222E1B2519A30D29AAEDE5CFCA4D79F228A736B4129AE58AF1D7A0EB",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_aac_decoder_custom.c",
+      "bytes": 11392,
+      "sha256": "5994FD0F76FABE1588EB1DE7AFC2EEE058F94EA1CB59A418962955432EC35390",
+      "base_sha256": "B5075BD47CE86128D139551F6D62E38E6316CA2F05BDAEC63887B2FC99C0B83C",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_codec_config.c",
+      "bytes": 8929,
+      "sha256": "C03863A3AC8940CFF007733920EFC250E1615C7DC8F91DB0195025D41219A219",
+      "base_sha256": "D39ED0796BAB54D6C8F1F02E7A449D8BC6E660EAE10A3F1C0E7F45B5AB45B320",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_sink_policy.c",
+      "bytes": 26726,
+      "sha256": "D8B2A130B94F8B9C94B24098D22F7BC583B010FF4BE3088F051688721CA01F71",
+      "base_sha256": null,
+      "published": true,
+      "license": "PolyForm-Noncommercial-1.0.0"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_aptx_decoder.c",
+      "bytes": 13733,
+      "sha256": "E29E677752773942CE0A45A6EEC967BA4417A9573D034E646110F41A442E605F",
+      "base_sha256": "53B08B165D3C382E1999EB4011BC0263FACAF584B9B93559E5B9DC1C712F790C",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_aptx_ll.c",
+      "bytes": 11139,
+      "sha256": "979F07136C8CBAF2DC69DE6271BF2120A5F9615914FA2CCA0F37FE704CCC882A",
+      "base_sha256": "FFEE5F589795D5169C3F5F35668EFACC6BD3CB2C49D4AF41C8BEC2F9B8E5F6FC",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_lc3plus.c",
+      "bytes": 8890,
+      "sha256": "DC5B1AC1CA8D28DC7A5E947FBD3D781696E09063D6E7D4A41EEA31AEA4474968",
+      "base_sha256": "9FA6133682FC23F42C041EE0B4A0CFC20B10EC8FAE11B5882C325241ECF30C3B",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_lc3plus_decoder.c",
+      "bytes": 5182,
+      "sha256": "D830FF0DDE0A333D6CA7A47BE6E6DE6042C14EBC15ECC732EF089A9ABB8737F9",
+      "base_sha256": "A8150F4D1EB6A0186178957E8FA548897C160C2EFB8242D1823F31DEB378205D",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_ldac.c",
+      "bytes": 11500,
+      "sha256": "D18CF00FBC95EAD8130CF63DF86E1967CF2D03A79617980DA6F29EA87463DF98",
+      "base_sha256": "02202D21C4380E43FDC4A4726338E1BBD776895DBCDADB5515A84B33D317A718",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_ldacbt_decoder.c",
+      "bytes": 14543,
+      "sha256": "54396533B2E7557A2532084956AD9186D5E463A1AE1437F2E67DC053C670CAE2",
+      "base_sha256": "1E91A6AF5EA4105F17C75B7E3AA3742046E9105B27BC9A1C765CE04039CFB972",
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_lhdcv5.c",
+      "bytes": 10533,
+      "sha256": "E101FC427F8528F4A72578CCE06E4F9C7D7B5D13F046ACF860A9F3FDB8463F7F",
+      "base_sha256": "331D6CC3968D1DAD5E36B413B2FCF52C718A0C68839947FD98A0B9D916100B8E",
+      "published": false,
+      "reason": "Disabled LHDC implementation omitted"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/a2dp/a2dp_vendor_lhdcv5_decoder.c",
+      "bytes": 11809,
+      "sha256": "07781E91A167AA7E772AA4153CCEF0C12F6CD8B81EA21D7400139C259B437936",
+      "base_sha256": "2CDC1FEEFC44FC0CBFC7031CC49672F1A0D8331B881DC9EB7715E5E32B8982FF",
+      "published": false,
+      "reason": "Disabled LHDC implementation omitted"
+    },
+    {
+      "path": "components/bt/host/bluedroid/stack/include/stack/a2dp_rtp_bounds.h",
+      "bytes": 1386,
+      "sha256": "F3ED682C539A939FEA05C147C597793BEF0739F233908AAEC86DC0B2DCF0AC35",
+      "base_sha256": null,
+      "published": true,
+      "license": "upstream Apache-2.0 portions; original additions per LICENSE_SCOPE.md"
+    }
+  ],
+  "lgpl_support": [
+    {
+      "path": "components/bt/host/bluedroid/external/libfreeaptx/CMakeLists.txt",
+      "bytes": 470,
+      "sha256": "200A18FF0C7ADD4CE92ACF40184F1312DD1E81DFF32C0BE4E1BABD83E4EF293D",
+      "license": "LGPL-2.1-or-later (library) / original build-file terms"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libfreeaptx/main/CMakeLists.txt",
+      "bytes": 312,
+      "sha256": "738C19BF3832846FF20CC70119D032D1EAE2D89251ACCB26E06EA6D46AA1DAA4",
+      "license": "LGPL-2.1-or-later (library) / original build-file terms"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libfreeaptx/main/freeaptx.h",
+      "bytes": 7149,
+      "sha256": "469FDCE4CE03AFB149F2BE5496D75BAA89E671D01DD6FCD5BDC2073013B2AD0E",
+      "license": "LGPL-2.1-or-later (library) / original build-file terms"
+    },
+    {
+      "path": "components/bt/host/bluedroid/external/libfreeaptx/main/COPYING",
+      "bytes": 27032,
+      "sha256": "1E7E6BAE5A5BDE32F1AE5A7C37A082D1AB03CF89354F7F936AC40BE9E39A6531",
+      "license": "LGPL-2.1-or-later (library) / original build-file terms"
+    }
+  ],
+  "tinyusb": {
+    "version": "0.21.0~1",
+    "commit": "7049c58a0e895acc92c6407574b05b5536eddfc8",
+    "component_hash": "a72b7d67472914ab76309340fd50d578b31e310963d45ad0f81144bde3314752",
+    "entries": [
+      {
+        "path": "src/class/audio/audio_device.c",
+        "base_sha256": "347AC32CE077F8B34B6B21069AFB1959F6EB89D8DC32D80C4A672A19ECABC8BC",
+        "sha256": "47F57962FA4C21D29C341A61B26A42B0B7F63FAD4693702DE634C6703FE9C6FF",
+        "bytes": 78534,
+        "license": "MIT original portions; additions per LICENSE_SCOPE.md"
+      },
+      {
+        "path": "src/portable/synopsys/dwc2/dcd_dwc2.c",
+        "base_sha256": "66A3D4C49BF78BFCA5D7D49A4FF28D0B839A8695912A2C9C29344BEAE475E25A",
+        "sha256": "0D01A239F278B4077C5D25B4891E39AE85F4B07E63E8E96310D60441B060ACA5",
+        "bytes": 44868,
+        "license": "MIT original portions; additions per LICENSE_SCOPE.md"
+      }
+    ]
+  }
+}

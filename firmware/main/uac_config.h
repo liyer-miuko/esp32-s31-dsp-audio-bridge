@@ -1,0 +1,80 @@
+/*
+ * SPDX-FileCopyrightText: 2023-2024 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+#pragma once
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "sdkconfig.h"
+
+/* ---- 固定配置（原 Kconfig，移植为常量）---- */
+#define SPEAK_CHANNEL_NUM    2       /*!< SPEAKER */
+#define MIC_CHANNEL_NUM      0       /*!< MIC */
+#define DEFAULT_SAMPLE_RATE  48000   /*!< SAMPLE RATE */
+#define SPK_INTERVAL_MS      1       /*!< READ INTERVAL in ms*/
+#define MIC_INTERVAL_MS      1       /*!< WRITE INTERVAL in ms*/
+
+/*
+ * FIX(uac-bridge): 0.21 适配时把 esp 组件 0.19 的 FU 宏搬来但丢了 bControlSize
+ * 字段（UAC2 4.7.2.8 必填），且 IN_CTRL_CH_VALUE 用 U32_TO_U8S_LE 产生 4 字节
+ * 控制位图（bControlSize=1 时应为 1 字节/通道）——usbaudio2 会把 0x0f 读成
+ * bControlSize=15，控制位图错位。修复：bControlSize=1，每通道 1 字节 0x09
+ * （MUTE bit0 + VOLUME bit1，RW=0b11）。
+ */
+#define IN_CTRL_CH_VALUE 0x09
+
+#if SPEAK_CHANNEL_NUM == 1
+#define INPUT_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif SPEAK_CHANNEL_NUM == 2
+#define INPUT_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif SPEAK_CHANNEL_NUM == 3
+#define INPUT_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif SPEAK_CHANNEL_NUM == 4
+#define INPUT_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif SPEAK_CHANNEL_NUM == 5
+#define INPUT_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif SPEAK_CHANNEL_NUM == 6
+#define INPUT_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif SPEAK_CHANNEL_NUM == 7
+#define INPUT_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif SPEAK_CHANNEL_NUM == 8
+#define INPUT_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#endif
+
+#if MIC_CHANNEL_NUM == 1
+#define MIC_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif MIC_CHANNEL_NUM == 2
+#define MIC_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif MIC_CHANNEL_NUM == 3
+#define MIC_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif MIC_CHANNEL_NUM == 4
+#define MIC_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif MIC_CHANNEL_NUM == 5
+#define MIC_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif MIC_CHANNEL_NUM == 6
+#define MIC_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif MIC_CHANNEL_NUM == 7
+#define MIC_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#elif MIC_CHANNEL_NUM == 8
+#define MIC_CTRL      IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE, IN_CTRL_CH_VALUE
+#endif
+
+/* Feature Unit Descriptor(4.7.2.8) */
+// N - Channels，bControlSize=1，每通道 1 字节控制位图
+// 长度 = 6 头 + 1(ctrl size) + (N+1)(controls) + 2(term) + 2(vol) + 2(mode)
+#define TUD_AUDIO_DESC_SPK_FEATURE_UNIT_N_CHANNEL_LEN   (6+1+(SPEAK_CHANNEL_NUM+1)+6)
+#define TUD_AUDIO_DESC_MIC_FEATURE_UNIT_N_CHANNEL_LEN   (6+1+(MIC_CHANNEL_NUM+1)+6)
+#define TUD_AUDIO_DESC_FEATURE_UNIT_N_CHANNEL(_length ,_unitid, _srcid, _stridx, ...) \
+  _length, TUSB_DESC_CS_INTERFACE, AUDIO_CS_AC_INTERFACE_FEATURE_UNIT, _unitid, _srcid, 1 /*bControlSize*/, __VA_ARGS__, \
+  0x00, 0x00, /* bmTerminalControls */ \
+  0x00, 0x00, /* wObjectiveVolume */ \
+  0x00, 0x00, /* wAuditMode */ \
+  _stridx
+
+#ifdef __cplusplus
+}
+#endif

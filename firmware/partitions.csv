@@ -1,0 +1,11 @@
+# ESP32-S31 UAC bridge - custom partition table (任务书 42 / BLE 调音, 0.69)
+#
+# 为什么自定义：BLE 双模 + BLE 栈把镜像推到 ~2.02 MB，SINGLE_APP_LARGE 的
+# factory(0x177000) 装不下。16 MB 闪存，factory 扩到 3 MB 留一兆余量。
+# ★ nvs/phy_init 的偏移与尺寸与 SINGLE_APP_LARGE 逐字节一致 ⇒
+#   在役设备的 NVS 配置（dspcfg）不丢、无需重新校准。
+#
+# Name,   Type, SubType, Offset,  Size,  Flags
+nvs,      data, nvs,     0x9000,  0x6000,
+phy_init, data, phy,     0xF000,  0x1000,
+factory,  app,  factory, 0x10000, 0x300000,

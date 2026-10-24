@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--
+Required Notice: Original project contributions Copyright 2026 liyer-miuko and respective contributors.
+Original WebUI contributions: PolyForm Noncommercial License 1.0.0
+https://polyformproject.org/licenses/noncommercial/1.0.0
+Third-party material retains its original terms. License scope:
+https://github.com/liyer-miuko/esp32-s31-dsp-audio-bridge/blob/main/LICENSE_SCOPE.md
+-->
+
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#101522">
+<title>Audio Bridge DSP Console</title>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="console.css">
+<script>/* 主题预置：避免浅色模式首屏闪烁 */
+try{var __m=location.hash.match(/theme=(light|dark)/);
+var __t=__m?__m[1]:(localStorage.getItem("esp32s31.dspui.theme")||((window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark"));
+document.documentElement.dataset.theme=__t;}catch(e){}
+</script>
+<script src="locales.js"></script>
+<script src="i18n.js"></script>
+</head>
+<body>
+<header class="hd">
+  <div class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div>
+    <div class="title">Audio Bridge DSP Console</div>
+    <div class="sub">ESP32-S31 · USB ↔ BT AUDIO BRIDGE</div>
+  </div>
+  <div class="sp"></div>
+  <button class="btn language-toggle" type="button" id="btnLanguage" data-no-translate>English</button>
+  <button class="btn icon" id="btnTheme" title="Change the color theme">☀</button>
+  <div class="stat">Source <b id="stSrc">--</b></div>
+  <div class="stat">Sample rate <b id="stFs">--</b></div>
+  <div class="stat">Output <b id="stOut">Dual I2S</b></div>
+  <div class="stat conn ble" id="bleStat" title="Connect or disconnect BLE tuning. The browser must support Web Bluetooth."><span id="bleDot" class="dot"></span><span id="bleTxt">Connect BLE</span></div>
+  <div class="stat conn serial" id="connStat" title="Connect or disconnect USB Serial/JTAG."><span id="connDot" class="dot"></span><span id="connTxt">Connect serial</span></div>
+</header>
+<section class="flow">
+  <h3>Signal path <span id="flowStatus" class="tip" role="status"></span></h3>
+  <div class="flowv" id="flowV">
+    <div class="fv-stage">
+      <div class="fv-tag">Inputs</div>
+      <div class="fv-col">
+        <button type="button" class="fv-node" data-jump="in" data-target="#in0" style="--nc:var(--usb)"><b>USB</b><small>UAC2 · 44.1~96k</small></button>
+        <button type="button" class="fv-node" data-jump="in" data-target="#in1" style="--nc:var(--bt)"><b>Bluetooth</b><small>A2DP audio</small></button>
+      </div>
+    </div>
+    <div class="fv-arrow" aria-hidden="true">→</div>
+    <div class="fv-stage">
+      <div class="fv-tag">Routing</div>
+      <div class="fv-col">
+        <button type="button" class="fv-node" data-jump="route" data-target="#sp-route" style="--nc:var(--acc)"><b>Route matrix</b><small>2 inputs / 4 channels</small></button>
+      </div>
+    </div>
+    <div class="fv-arrow" aria-hidden="true">→</div>
+    <div class="fv-stage">
+      <div class="fv-tag">DSP</div>
+      <div class="fv-col">
+        <button type="button" class="fv-node" data-jump="dsp" data-target="#xoOut0" style="--nc:var(--ch1)"><b>DSP1 / I2S0 / left</b><small>PEQ · HP/LP</small></button>
+        <button type="button" class="fv-node" data-jump="dsp" data-target="#xoOut1" style="--nc:var(--ch2)"><b>DSP2 / I2S0 / right</b><small>PEQ · HP/LP</small></button>
+        <button type="button" class="fv-node" data-jump="dsp" data-target="#xoOut2" style="--nc:var(--ch3)"><b>DSP3 / I2S1 / left</b><small>PEQ · HP/LP</small></button>
+        <button type="button" class="fv-node" data-jump="dsp" data-target="#xoOut3" style="--nc:var(--ch4)"><b>DSP4 / I2S1 / right</b><small>PEQ · HP/LP</small></button>
+      </div>
+    </div>
+    <div class="fv-arrow" aria-hidden="true">→</div>
+    <div class="fv-stage">
+      <div class="fv-tag">Ports</div>
+      <div class="fv-col">
+        <button type="button" class="fv-node" data-jump="ports" data-target="#portCards .port:nth-child(1)" style="--nc:var(--c-p0)"><b>I2S0</b><small>Output</small></button>
+        <button type="button" class="fv-node" data-jump="ports" data-target="#portCards .port:nth-child(2)" style="--nc:var(--c-p1)"><b>I2S1</b><small>Output</small></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ws">
+  <div class="ws-main">
+    <section class="panel">
+      <h3>Frequency response <span class="tip">This graph uses local settings. Drag an EQ point to change its frequency and gain.</span></h3>
+      <div class="rbar tight"><label>Show</label>
+        <select id="respSel">
+          <option value="all" selected>All channels</option>
+          <option value="in0">USB input / Room EQ and PEQ</option>
+          <option value="in1">Bluetooth input / Room EQ and PEQ</option>
+          <option value="out0">DSP1 / I2S0 left / PEQ, HP, LP</option>
+          <option value="out1">DSP2 / I2S0 right / PEQ, HP, LP</option>
+          <option value="out2">DSP3 / I2S1 left / PEQ, HP, LP</option>
+          <option value="out3">DSP4 / I2S1 right / PEQ, HP, LP</option>
+          <option value="p0L">Port 0 left / DSP1 and port gain</option>
+          <option value="p0R">Port 0 right / DSP2 and port gain</option>
+          <option value="p1L">Port 1 left / DSP3 and port gain</option>
+          <option value="p1R">Port 1 right / DSP4 and port gain</option>
+        </select>
+        <label>View</label>
+        <select id="respView">
+          <option value="mag" selected>Magnitude, dB</option>
+          <option value="phase">Phase, degrees</option>
+        </select>
+        <span class="tip">Logarithmic frequency axis: 20 Hz to 20 kHz. Drag EQ points in magnitude view.</span>
+      </div>
+      <div class="resp-wrap"><canvas id="respCv" width="880" height="240"></canvas></div>
+        <div class="tip" id="respLimitTip" style="margin-top:6px;font-size:11px;color:var(--dim)">Gain axis: +/-15 dB. Each PEQ band accepts -12 to +12 dB.</div>
+        <div class="tip" id="respLimitWarn" style="display:none;margin-top:4px;font-size:11px;color:var(--err);font-weight:700"></div>
+    </section>
+
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Audio controls">
+      <span class="tab-ind" id="tabInd"></span>
+      <button class="tab on" data-panel="in" role="tab" aria-selected="true" aria-controls="tp-in">Inputs</button>
+      <button class="tab" data-panel="route" role="tab" aria-selected="false" aria-controls="tp-route">Routing</button>
+      <button class="tab" data-panel="dsp" role="tab" aria-selected="false" aria-controls="tp-dsp">DSP</button>
+      <button class="tab" data-panel="ports" role="tab" aria-selected="false" aria-controls="tp-ports">Ports</button>
+    </nav>
+
+    <section class="panel tp on" id="tp-in">
+      <h3>Inputs <span class="tip">USB and Bluetooth have separate gain, mute, phase, PEQ, and room EQ settings.</span></h3>      <div class="grid2">
+        <div class="card" id="in0"></div>
+        <div class="card" id="in1"></div>
+      </div>
+    </section>
+
+    <!-- 路由区面板：按用户要求**去掉了** <h3>路由区 2 输入 × 4 通道…</h3> 那行冗余标题
+         （面板内已有「路由矩阵」标题，标题里就带着完整说明）。留 aria-label 免得面板没名字。 -->
+    <section class="panel tp" id="tp-route" aria-label="Routing">
+      <div id="sp-route">
+        <h4>Route matrix <span class="tip">Each cell selects a source channel and gain. Bluetooth has priority when both sources supply audio.</span></h4>
+        <div id="routeMx"></div>
+      </div>
+    </section>
+
+    <section class="panel tp" id="tp-dsp">
+      <h3>DSP <span class="tip">DSP1/DSP2 feed I2S0. DSP3/DSP4 feed I2S1. Each channel has PEQ, high-pass, and low-pass filters.</span></h3>
+      <!-- 左右声道同步：从「通道 DSP」面板里**提出来**独立成一个面板，并按用户要求移到**通道 DSP 上方**。
+           它管的是一对通道之间的关系，本来就该排在"单条通道怎么调"之前 ——
+           先决定"要不要左右联动"，再逐条通道调参，顺序更符合实际操作。 -->
+      <div class="subpanel" style="margin-bottom:12px">
+        <h4>Link channel pairs <span class="tip">A change to one linked channel applies to both channels in that pair.</span></h4>
+        <div id="linkTogWrap"></div>
+      </div>
+      <div class="subpanel" style="margin-bottom:12px">
+        <h4>Channel DSP <span class="tip">Set PEQ, high-pass, and low-pass filters for each channel. PEQ gain range: -12 to +12 dB.
+          <b>DSP1/DSP2: I2S0 left/right. DSP3/DSP4: I2S1 left/right.</b></span></h4>
+        <div class="grid2">
+          <div><div id="xoOut0"></div></div>
+          <div><div id="xoOut1"></div></div>
+          <div><div id="xoOut2"></div></div>
+          <div><div id="xoOut3"></div></div>
+        </div>
+      </div>
+      <div class="subpanel">
+        <h4>Master volume <span class="tip">Applies to all DSP outputs. Zero percent sends digital silence.</span></h4>
+        <div class="rbar"><label>Master volume</label><input type="range" id="masterVol" min="0" max="100" value="100"><span class="val" id="masterVolv">100%</span></div>
+        <h4 style="margin-top:14px">Limiter <span class="tip">After port gain. Stereo channels are linked. Default: off.</span></h4>
+        <div class="rbar tight">
+          <label>On</label><span id="limTogWrap"></span>
+          <span class="tip">The limiter reduces signals above the threshold. Release time controls recovery.</span>
+        </div>
+        <div class="rbar"><label>Threshold</label><input type="range" id="limThresh" min="-24" max="0" step="0.5" value="-1"><span class="val" id="limThreshv">-1.0 dBFS</span></div>
+        <div class="rbar"><label>Release</label><input type="range" id="limRel" min="10" max="1000" step="10" value="100"><span class="val" id="limRelv">100 ms</span></div>
+        <h4 style="margin-top:14px">Loudness compensation <span class="tip">Two shelf filters follow master volume. They do not use PEQ slots. Default: off.</span></h4>
+<div class="tip" style="font-size:10px;color:var(--warn,#fbbf24);margin:-4px 4px 6px">
+  Use the device-reported filter limit. Loudness compensation has a reserved processing allowance.</div>
+        <div class="rbar tight">
+          <label>On</label><span id="loudTogWrap"></span>
+          <span class="tip">Compensation increases as master volume falls below the reference volume.</span>
+        </div>
+        <div class="rbar"><label>Maximum boost</label><input type="range" id="loudAmt" min="0" max="15" step="0.5" value="10"><span class="val" id="loudAmtv">10.0 dB</span></div>
+        <div class="rbar"><label>Reference volume</label><input type="range" id="loudRef" min="5" max="100" step="1" value="80"><span class="val" id="loudRefv">80%</span></div>
+        <div class="rbar tight">
+          <label>Current boost</label><span class="val" id="loudNowv" style="min-width:0">-- dB</span>
+          <span class="tip">The response graph includes this compensation.</span>
+        </div>
+        <h4 style="margin-top:14px">Compressor / Night mode <span class="tip">After port gain and before the limiter. Stereo channels are linked. Gain compensation is automatic. Default: off.</span></h4>
+<div class="tip" style="font-size:10px;color:var(--warn,#fbbf24);margin:-4px 0 6px">
+  The compressor reduces the available filter count. Read the device-reported limit.<br>
+  <b>Filter limit: __COMP__ biquads with compressor on; __EXT__ with compressor off.</b>
+  <span id="compBudgetNow" style="opacity:.9"></span></div>
+        <div class="rbar tight">
+          <label>On</label><span id="compTogWrap"></span>
+          <button class="btn mini" id="compNightBtn" type="button">Night mode</button>
+          <span class="tip">Sets threshold -30 dBFS, ratio 4:1, and release 200 ms. Then starts the compressor.</span>
+        </div>
+        <div class="rbar"><label>Threshold</label><input type="range" id="compTh" min="-60" max="0" step="1" value="-30"><span class="val" id="compThv">-30 dBFS</span></div>
+        <div class="rbar"><label>Ratio</label><input type="range" id="compRatio" min="10" max="255" step="1" value="40"><span class="val" id="compRatiov">4.0:1</span></div>
+        <div class="rbar"><label>Release</label><input type="range" id="compRel" min="10" max="2000" step="10" value="200"><span class="val" id="compRelv">200 ms</span></div>
+        <div class="rbar tight">
+          <label>Automatic gain</label><span class="val" id="compMakeupv" style="min-width:0">-- dB</span>
+          <span class="tip">Attack time is fixed at 5 ms. Gain compensation also applies below the threshold.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel tp" id="tp-ports">
+      <h3>Ports <span class="tip">Port 0 uses DSP1/DSP2. Port 1 uses DSP3/DSP4. Set channel filters in the DSP panel.</span></h3>
+      <div class="grid3" id="portCards"></div>
+      <div class="kbd-note" id="portGuide">
+        <p>Each DSP channel feeds one output slot. Select its input in the Routing panel.</p>
+        <p>Port 0 uses DSP1/DSP2. Port 1 uses DSP3/DSP4. Both ports have separate gain, delay, and channel settings.</p>
+        <p>Select the I2S format to match the receiving device. The selected source controls the sample rate.</p>
+        <p>Both ports share APLL. Frame phase alignment is not guaranteed.</p>
+        <p>I2S0: MCLK2/BCLK3/WS4/DATA7. I2S1: MCLK13/BCLK14/WS15/DATA16.</p>
+      </div>
+      <div class="subpanel" id="muteBox">
+        <div class="rbar tight">
+          <label>Mute control</label>
+          <span class="tip">GPIO8 and optional I2C mute follow PCM activity. Digital-zero PCM is active. Connection alone is not activity.</span>
+        </div>
+        <div class="rbar">
+          <label>Stop delay</label>(<input class="numinp" type="number" id="muteDelayA" min="0" max="2000" step="10" value="30">) ms
+          <span class="tip">Wait this long after PCM stops before setting mute. Default: 30 ms.</span>
+        </div>
+        <div class="rbar">
+          <label>Start delay</label>(<input class="numinp" type="number" id="muteDelayB" min="0" max="2000" step="10" value="30">) ms
+          <span class="tip">Wait this long after PCM starts before clearing mute. Default: 30 ms.</span>
+        </div>
+        <div class="rbar tight">
+          <label>Invert GPIO level</label><span id="mutePolWrap"></span>
+          <span class="tip">Default: GPIO8 low means mute. This setting does not change I2C register values.</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <aside class="ws-side">
+    <section class="panel">
+      <div class="sys-stack">
+        <div>
+          <h3>Device status</h3>
+          <div class="rbar tight"><label>Sample rate</label><span class="sysval" id="sysFs">--</span></div>
+          <div class="rbar tight"><label>Firmware</label><span class="sysval" id="sysVer">--</span></div>
+          <div class="rbar tight"><label>DSP load</label><span class="sysval" id="sysLoad">--</span></div>
+        </div>
+        <div>
+          <h3>Device monitor <span class="tip">Disconnected: --</span></h3>
+          <div class="mon">
+            <div class="monrow"><label>CPU0</label><div class="monbar"><i id="monCpu0"></i></div><span class="monv" id="monCpu0v">--</span></div>
+            <div class="monrow"><label>CPU1</label><div class="monbar"><i id="monCpu1"></i></div><span class="monv" id="monCpu1v">--</span></div>
+            <div class="monrow"><label>CPU0 clock</label><span class="monv" id="monFreq0">--</span></div>
+            <div class="monrow"><label>CPU1 clock</label><span class="monv" id="monFreq1">--</span></div>
+            <div class="monrow"><label>Heap</label><span class="monv" id="monHeap">--</span></div>
+            <div class="monrow"><label>Flash</label><span class="monv" id="monFlash">--</span></div>
+            <div class="monrow"><label>Refresh</label>
+              <select id="monRate">
+                <option value="500">500 ms</option>
+                <option value="1000" selected>1 s</option>
+                <option value="2000">2 s</option>
+                <option value="3000">3 s</option>
+                <option value="5000">5 s</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>DSP performance <span class="tip">Telemetry: 1 Hz</span></h3>
+          <div class="rbar tight"><label>Processing time</label><span class="sysval" id="telTime">--</span></div>
+          <div class="rbar tight"><label>Blocks processed</label><span class="sysval" id="telBlocks">--</span></div>
+          <div class="rbar tight"><label>Buffer use</label><span class="sysval" id="telFill">--</span></div>
+          <div class="rbar tight"><label>Drift correction</label><span class="sysval" id="telPpm">--</span></div>
+        </div>
+        <div class="settings-group" id="currentSettings">
+          <h3>Save and read</h3>
+          <p class="group-help">Save to keep settings after restart.</p>
+          <div class="action-buttons">
+            <button class="btn" id="btnSync">Read configuration</button>
+            <button class="btn primary" id="btnSave">Save configuration</button>
+          </div>
+          <div id="fileSettings" class="file-actions">
+            <div class="action-buttons">
+              <button class="btn" id="btnExport">Export config file</button>
+              <button class="btn" id="btnImport">Import config file</button>
+              <input type="file" id="importFile" accept=".json,application/json" hidden>
+            </div>
+            <div class="action-buttons">
+              <button class="btn" id="btnExportDsp">Export DSP parameters</button>
+              <button class="btn" id="btnImportDsp">Import DSP parameters</button>
+              <input type="file" id="dspFile" accept=".json,application/json" hidden>
+            </div>
+            <p class="group-help">DSP files change sound settings only.</p>
+          </div>
+          <details class="reset-options"><summary>Restore defaults</summary>
+            <p class="group-help">Save after restoring to keep the defaults.</p>
+            <button class="btn" id="btnDefault">Load DSP defaults</button>
+          </details>
+          <details class="reset-options"><summary>REW / APO</summary>
+            <button class="btn" id="btnImportEq" title="Import REW or EqualizerAPO filter text into channel PEQ.">Import EQ text</button>
+            <input type="file" id="importEqFile" accept=".txt,.cfg,.apf,.aup,text/plain" hidden>
+          </details>
+        </div>
+        <div class="settings-group" id="presetSettings">
+          <h3>Presets</h3>
+          <p class="group-help">Select a slot, then read or save.</p>
+          <div class="pslots" id="presetSlots"></div>
+          <div class="action-buttons preset-actions">
+            <button class="btn" id="btnDevPresetLoad">Load preset</button>
+            <button class="btn" id="btnDevPresetSave">Save preset</button>
+            <button class="btn quiet-danger" id="btnDevPresetClear">Delete preset</button>
+          </div>
+        </div>
+        <div>
+          <h3>Undo / Redo <span class="tip">Ctrl+Z / Ctrl+Y. History includes panel edits and configuration loads.</span></h3>
+          <div class="rbar tight">
+            <label>History</label>
+            <span class="sysval" id="undoState">--</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn" id="btnUndo">Undo</button>
+            <button class="btn" id="btnRedo">Redo</button>
+            <button class="btn" id="btnHistClear">Clear history</button>
+          </div>
+        </div>
+        <div>
+          <h3>Device log <span class="tip">Protocol logs, errors, and acknowledgements</span></h3>
+          <div class="logs" id="logBox"></div>
+        </div>
+      </div>
+    </section>
+  </aside>
+</div>
+
+<footer class="ft">ESP32-S31 / Dual I2S / USB serial and BLE control. Read the firmware version in Device status.</footer>
+
+<script src="config-codec.js"></script>
+<script src="app.js"></script>
+<script src="amp-control.js"></script>
+</body>
+</html>
