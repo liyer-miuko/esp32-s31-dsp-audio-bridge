@@ -4,6 +4,8 @@
 
 An experimental DIY USB/Bluetooth audio bridge with four-channel DSP and dual I²S outputs. Much of the code was written or changed by AI models, including Codex/GPT and DeepSeek, under the project owner's direction. **No guarantee is made that any function works correctly, safely, continuously, or on your hardware.**
 
+**Source and standalone WebUI only. No prebuilt firmware downloads are provided.**
+
 Original project contributions are available for noncommercial purposes under PolyForm Noncommercial 1.0.0. Third-party material retains its own terms. This is source-available software, **not OSI open source**.
 
 ## Features
@@ -20,6 +22,8 @@ SBC, AAC, aptX and aptX HD have implementation/history evidence, not a universal
 
 ## Use and safety
 
+The control page requires a device already running compatible firmware. Developers who need firmware must obtain their own dependencies, check the applicable terms and follow [BUILD.md](docs/BUILD.md). This repository is not a self-contained build kit.
+
 Use an **ESP32-S31**, not an ESP32-S3. Read [hardware wiring](docs/HARDWARE.md) before connecting a DAC or amplifier. Begin at low volume. Verify voltage levels, pins, output format, routing and amplifier coefficients. Do not use this experimental code in safety-critical systems.
 
 Open or download [webui/dsp webui.html](webui/dsp%20webui.html). The page has no external assets; device access still requires browser/OS API support. If local-file access is restricted, use a trusted localhost environment. Read the device configuration before editing it. Importing a file does not automatically save NVS. Amplifier configuration is separate.
@@ -28,8 +32,10 @@ Open or download [webui/dsp webui.html](webui/dsp%20webui.html). The page has no
 
 The application source snapshot is based on firmware 0.254. This repository intentionally excludes the full SDK, analyzers, captures, local credentials, historical archives and private workflow records.
 
-**No flashable binary is published, and this subset is not claimed to reproduce 0.254 independently.** The existing binary links Helix AAC (RPSL), whose combined-work terms conflict with the intended noncommercial project license; the LDAC decoder's redistribution grant also remains unresolved. Required unresolved SDK files are identified, not silently replaced or relicensed. See [firmware release status](firmware/releases/README.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
+**The distribution policy is source and WebUI only: no BIN/ELF.** Users obtain dependencies and build locally. This subset cannot independently reproduce 0.254; omitted files and reasons are identified in `sdk/manifest.json`. See [firmware publication notes](firmware/releases/README.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
 
 Build the standalone UI with `node webui/build.cjs`. Firmware build requirements and limitations are in [BUILD.md](docs/BUILD.md). Contributions must preserve third-party licenses and the frozen core1 source/interface/object checks.
 
 Codec copyright, patent, trademark, certification and commercial distribution rights are separate. This repository grants no rights owned by codec vendors and provides no warranty of non-infringement. See [LICENSE](LICENSE), [LICENSE_SCOPE.md](LICENSE_SCOPE.md), [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+
+Original licensable DSP/UAC contributions retain the project noncommercial terms; third-party portions retain their own licenses. **Building locally does not itself grant additional rights or remove the publisher's or recipient's distribution obligations.** Community codec implementations must not be described as vendor-authorized packages without evidence. This inventory is not a legal compliance certification. See the [licensing questions](docs/LICENSING.md).

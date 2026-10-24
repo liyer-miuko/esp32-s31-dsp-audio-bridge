@@ -1,8 +1,8 @@
 # ESP32-S31 DSP Audio Bridge
 
-**USB 与蓝牙音频输入，四通道 DSP，双 I²S 输出。**
+**USB 与蓝牙音频输入，四通道 DSP，双 I²S 输出。仅发布源码与单文件 WebUI，不提供预编译固件。**
 
-[English](README.en.md) · [硬件接线](docs/HARDWARE.md) · [构建说明](docs/BUILD.md) · [使用限制](docs/LIMITATIONS.md) · [许可范围](LICENSE_SCOPE.md)
+[English](README.en.md) · [硬件接线](docs/HARDWARE.md) · [构建说明](docs/BUILD.md) · [使用限制](docs/LIMITATIONS.md) · [许可问答](docs/LICENSING.md)
 
 > 个人 DIY 实验项目。大量代码由 Codex/GPT、DeepSeek 等人工智能模型在用户指导下编写和修改，未经过独立产品级认证。**不保证功能正常、兼容性、音质、稳定性或安全性，请自行评估并承担使用风险。**
 >
@@ -40,6 +40,8 @@ core0 处理输入、蓝牙解码和控制；core1 处理 DSP、路由和 I²S�
 
 ## 开始使用
 
+**本仓库没有可下载刷写的 BIN。** 以下控制台操作需要设备已运行兼容固件。需要固件的开发者应先阅读[构建说明](docs/BUILD.md)，自行取得所需依赖并核对许可；公开快照不是完整、自包含的构建包。
+
 1. 确认硬件是 **ESP32-S31**，不是 ESP32-S3。先阅读接线和电平要求。
 2. 下载或复制 [webui/dsp webui.html](webui/dsp%20webui.html)。页面自身不需要其他文件或网络资源。
 3. 使用提供 Web Serial 或 Web Bluetooth 的浏览器连接设备。浏览器和系统必须支持相应接口。浏览器若限制本地文件访问，可在可信 localhost 环境打开页面；不要上传到不可信网站代管连接。
@@ -49,10 +51,10 @@ core0 处理输入、蓝牙解码和控制；core1 处理 DSP、路由和 I²S�
 ## 此次发布范围
 
 - 应用源码、配置、冻结记录；单文件 WebUI 及其可编辑源码。
-- 已确认许可范围的必要 SDK/组件差异、构建和协议说明。
+- 带有来源、文件身份和许可说明的必要 SDK/组件差异、构建和协议说明。
 - **不上传**完整 ESP-IDF、逻辑分析仪工具、采集数据、个人日志、设备地址、凭据、开发环境、旧固件堆和聊天记录。
 - 当前在役参考版本为 **0.254**，源快照身份见 [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json)。
-- **当前不提供可直接刷写的 BIN/ELF，也不声称这个精简包可独立重建 0.254。** 现有固件链接了 Helix AAC，RPSL 的组合许可要求与本项目非商业许可存在冲突；LDAC 解码库分发许可也未确认。详见 [固件发布状态](firmware/releases/README.md)。免责声明不能解决这些问题。
+- **发布政策是源码与 WebUI，不发布 BIN/ELF。** 使用者自行取得依赖和构建；本精简包不能独立重建 0.254。省略文件与原因见 `sdk/manifest.json`，历史镜像的组成见[固件发布说明](firmware/releases/README.md)。
 
 ## 开发与反馈
 
@@ -62,8 +64,10 @@ WebUI 使用 Node.js 内置工具打包：`node webui/build.cjs`。固件需要�
 
 ## 许可
 
-我们有权许可的原创代码、WebUI 和文档采用 [PolyForm Noncommercial 1.0.0](LICENSE)，禁止未获另行授权的商业用途。其具体允许用途以标准许可原文为准。
+我们有权许可的原创代码（包括 DSP/UAC 原创处理）、WebUI 和文档采用 [PolyForm Noncommercial 1.0.0](LICENSE)，仅允许许可规定的用途，不授予超出这些用途的商业使用权。其具体允许用途以标准许可原文为准。
 
 第三方原始代码及必须保留原许可的修改不受该非商业许可重新授权。文件内的原始许可、[LICENSE_SCOPE.md](LICENSE_SCOPE.md) 和 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 共同说明范围。保留全部版权与许可通知，不移除第三方要求；公开源代码不等于拥有编解码器专利或商业使用权。
+
+**自行构建不等于自动取得授权，也不表示分发义务已转移或免除。** 编解码器实现可能来自第三方社区，并非厂商授权包。构建、使用或再分发前，应按实际依赖和组合方式核对条款；本仓库的声明不是授权证明或法律合规保证。
 
 特别感谢 [WillyBilly06/ESP32-S31-A2DP-Codecs](https://github.com/WillyBilly06/ESP32-S31-A2DP-Codecs)、Espressif、TinyUSB、cJSON 和各第三方实现的作者。它们不是本项目的担保方。

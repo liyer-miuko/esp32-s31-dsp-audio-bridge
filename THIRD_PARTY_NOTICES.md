@@ -16,4 +16,6 @@ Third-party code retains its original license and copyright notices. The root no
 
 SDK changes retain the upstream license blocks, authors and comments. Project changes relative to the external base are listed in `sdk/manifest.json`; omitted entries are explicit. The linked artifact identity is documented for provenance only, not offered for download.
 
+This repository publishes source and WebUI only. Users obtaining external dependencies must inspect those dependencies and any intended combination before building or redistributing. The maintainer remains responsible for license obligations attached to material distributed here; local building does not transfer that responsibility to somebody else. “Third party” does not mean “official vendor-authorized,” and no such authorization is inferred.
+
 The names ESP32, Bluetooth, aptX, LDAC, LHDC, LC3plus and TAS belong to their respective owners. Listing them is identification, not endorsement, certification or a grant of commercial rights.

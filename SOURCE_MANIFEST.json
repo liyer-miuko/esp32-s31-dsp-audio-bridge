@@ -406,6 +406,18 @@
   "hardware_operations": false,
   "firmware_rebuilt": false,
   "license_scope": "LICENSE_SCOPE.md",
-  "binary_publication": "WITHHELD_LICENSE_CONFLICT; identity only",
-  "sdk_manifest": "sdk/manifest.json"
+  "binary_publication": "NOT_DISTRIBUTED_SOURCE_ONLY_POLICY",
+  "sdk_manifest": "sdk/manifest.json",
+  "publication_policy": {
+    "scope": [
+      "application source",
+      "scoped dependency differences",
+      "standalone WebUI",
+      "documentation"
+    ],
+    "prebuilt_firmware": false,
+    "users_build_locally": true,
+    "self_contained_firmware_build": false,
+    "third_party_obligations_unchanged": true
+  }
 }

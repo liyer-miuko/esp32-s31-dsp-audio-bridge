@@ -36,9 +36,9 @@
     },
     {
       "path": "CONTRIBUTING.md",
-      "bytes": 1001,
-      "sha256": "5F549F1CA6BA3547FD5B159759A443012B6BE6E0434114621F708AE3305EB046",
-      "git_blob_sha1": "c5525b692031c60a553564566791b7e7189ca695"
+      "bytes": 1268,
+      "sha256": "540F7B9852C01D54F1918D6AF60ACFBB031A8FDF64145D228C10CF8EAD199109",
+      "git_blob_sha1": "40cc9aafb12e7021d87b74177fdfb19d35b10541"
     },
     {
       "path": "docs/AMPLIFIER_CONTROL.md",
@@ -48,9 +48,9 @@
     },
     {
       "path": "docs/BUILD.md",
-      "bytes": 3298,
-      "sha256": "438FB6EDECF45D36CCA11752D49121D6BF7865863549BE5FF7CEE7D77AC263BC",
-      "git_blob_sha1": "ad59bd2f256f99d193bad46f7bf38892f668cf1a"
+      "bytes": 3986,
+      "sha256": "784AE893756A6A36E3966901C5D06FF0588E23A2568CE44F97A8564C0A649704",
+      "git_blob_sha1": "83b72e6d0c2c61720d656df07b471f266a9658f4"
     },
     {
       "path": "docs/HARDWARE.md",
@@ -65,10 +65,16 @@
       "git_blob_sha1": "f789646eadc71c739ee3ed3566487c94f5632053"
     },
     {
+      "path": "docs/LICENSING.md",
+      "bytes": 2545,
+      "sha256": "C79851B2F8E89669ABBA63FD3FBBB69E13452EB6936AD8A9111F30C4EF70E0DD",
+      "git_blob_sha1": "a783965fc0530b625f6253d22dd9f54b5a4a11e9"
+    },
+    {
       "path": "docs/LIMITATIONS.md",
-      "bytes": 1558,
-      "sha256": "C7AD33A85D5543EB5EB95FA123208A56E2349EDB18EB32B3A83209BB67AE165D",
-      "git_blob_sha1": "64d4df0d78f90941e2fa62359bd1195befc31dfa"
+      "bytes": 1650,
+      "sha256": "60A751EC7B04DA4C6D75411D28A49F73564B41828153846FCE10233490640D53",
+      "git_blob_sha1": "775bd412b3a6397d50c87e14625ae466ffbb5f07"
     },
     {
       "path": "docs/PROTOCOL.md",
@@ -432,9 +438,9 @@
     },
     {
       "path": "firmware/releases/README.md",
-      "bytes": 1506,
-      "sha256": "18761AAA28BA02FE9F15281D8CA6EB5D15059A605CA899F61C521B50BD5DD031",
-      "git_blob_sha1": "9862538f616a276e79cf779fb793c48e9f477af9"
+      "bytes": 1898,
+      "sha256": "273904DFC6ED9FC771B457AD89F79C9AD8BCDD3DB738325A976F433CE66D7135",
+      "git_blob_sha1": "69a87c150b3a7666efa18dda1bc202173337ceae"
     },
     {
       "path": "firmware/sdkconfig",
@@ -468,9 +474,9 @@
     },
     {
       "path": "LICENSE_SCOPE.md",
-      "bytes": 2790,
-      "sha256": "2F5194AEA1403227440305359EC6F0399F0E36695CA14AE4A6B637F39A27DD0F",
-      "git_blob_sha1": "9b6abff7e155ca4ac31a640ade71633cedcd13f0"
+      "bytes": 3176,
+      "sha256": "BEE0CD75A3B4C8C5A1691BD1F8F11004692665BEC4EA99970CC99997896DA029",
+      "git_blob_sha1": "3b77699d2bea57943653d8dbd14976fbe701f784"
     },
     {
       "path": "LICENSES/Apache-2.0.txt",
@@ -498,15 +504,15 @@
     },
     {
       "path": "README.en.md",
-      "bytes": 3694,
-      "sha256": "2B5D46D8010E03F41FE04867DC81BA342B40ABEB9B172AFB4DD5E3F45FBC51C2",
-      "git_blob_sha1": "ea61e2e83fe02451a471fcb79aabab9603d83f7c"
+      "bytes": 4349,
+      "sha256": "65C33A27B78BE5C99B8B910499F434611BC0DB3584AE29049D3692FA4D27F77B",
+      "git_blob_sha1": "6d3cd12af3afaabdafe4b1cd8b0544fc9912edbc"
     },
     {
       "path": "README.md",
-      "bytes": 5329,
-      "sha256": "CA5077A9982E13DEB9670C3C2DE6B4563B6A72701C638D9819FA4F548E2999B5",
-      "git_blob_sha1": "92e29cbd05ea53b6cb776ad5e45dd91ecb440670"
+      "bytes": 5976,
+      "sha256": "36A013BFA24FA5E0C8002C833A7D1550B3A28A2645AAFAC570B766803ADF4083",
+      "git_blob_sha1": "59b252116e795dfaafe3883a7451adbd796746c5"
     },
     {
       "path": "sdk/manifest.json",
@@ -696,15 +702,15 @@
     },
     {
       "path": "SOURCE_MANIFEST.json",
-      "bytes": 14248,
-      "sha256": "ABD9D6EE5C9B2EA374907697CDE80A5C9274FB392CC35875DD8E21BAE6FAE57F",
-      "git_blob_sha1": "4f3a799c5607339b262fd4cb934e423501b4be0e"
+      "bytes": 14577,
+      "sha256": "BE55D9C8F0EACFD3E17B56E8B54E29834CF981FC518E975D5EC9C5FF11240F77",
+      "git_blob_sha1": "21da17b8a2e2d28be08b483ff84d17510999774d"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 3110,
-      "sha256": "C27DB28C2BEDB318CD0A1640682A7389C9F05C33B524852CF22EEDBC0926DD61",
-      "git_blob_sha1": "f08a9b27f17267aaad04a07eae1f05d78a4c80f7"
+      "bytes": 3568,
+      "sha256": "DCE482BE4C6063B61B6B90963F95DB4F85E5563FBD92E42548918D8E4F5EF97C",
+      "git_blob_sha1": "87a7dcf93d1c88652a0d3dafccff80423b9d5d20"
     },
     {
       "path": "tools/check_snapshot.py",

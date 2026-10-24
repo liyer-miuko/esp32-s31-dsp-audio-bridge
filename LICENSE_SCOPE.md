@@ -4,6 +4,8 @@ Required Notice: Original project contributions Copyright 2026 liyer-miuko and r
 
 The root LICENSE is the unmodified **PolyForm Noncommercial License 1.0.0**. It applies only to original contributions the contributors are entitled to license: original application/control code, WebUI, documentation and new standalone framework code. It applies only to rights that exist and can be granted; AI attribution does not establish exclusive ownership or third-party permission.
 
+In particular, licensable original DSP and UAC processing contributions are noncommercial under that license. Third-party descriptor, driver, algorithm or library portions inside a DSP/UAC-related file do not become project-owned merely because of the filename or directory.
+
 It does **not** relicense third-party material, erase notices or take away existing rights in upstream code. For mixed files, original upstream portions retain their original license; project-original additions use PolyForm only where upstream terms permit. Where a third-party license requires modifications to remain under that license, that requirement prevails (for example, the modified freeaptx library remains LGPL-2.1-or-later).
 
 | Material | Terms |
@@ -20,4 +22,4 @@ This is a **noncommercial source-available** project. CC BY 3.0 permits commerci
 
 Patent, trademark and certification rights are not created by a copyright notice. Nothing in this repository promises a commercial codec license, Bluetooth qualification or regulatory certification.
 
-To preserve these boundaries the existing mixed-license binary is withheld. A compatible replacement codec, a valid separate license, or a different distribution architecture must resolve the conflict before a binary release. A general “at your own risk” statement cannot replace those obligations.
+The repository's distribution policy is **source and standalone WebUI only**, without prebuilt firmware. Users obtain dependencies and build for themselves; that does not grant missing rights, certify a combined firmware, or remove any party's obligations for the material they distribute. A general “at your own risk” statement cannot replace those obligations. See [licensing questions](docs/LICENSING.md).
