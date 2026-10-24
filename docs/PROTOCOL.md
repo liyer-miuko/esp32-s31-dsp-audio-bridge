@@ -81,4 +81,4 @@ DSP NVS为 `dspcfg/blob`，预设 `p0..p4`；功放保存独立。硬复位后�
 
 GET回复header12 B：total@4:u16、offset@6:u16、generation@8:u32，再带≤243 B原JSON。上传不跨会话/token/代次，连续offset，10 s空闲期限。COMMIT仅接受，需等busy清零、applied及每端口状态确认实际结果。
 
-JSON最多8192 B、深度12，严格键/重复键/整数，两个端口；默认均关闭，地址7位。操作/预算与TAS基础模板以真源 [AMPLIFIER_CONTROL.md](C:/esp/uac-bridge/main/AMPLIFIER_CONTROL.md)为准。写失败需报告fault和mute UNKNOWN，不自动重试；没有实物不能声称已静音。NVS仅 `amp_i2c/profile_v1`。
+JSON最多8192 B、深度12，严格键/重复键/整数，两个端口；默认均关闭，地址7位。操作/预算与TAS基础模板见 [AMPLIFIER_CONTROL.md](AMPLIFIER_CONTROL.md)。写失败需报告fault和mute UNKNOWN，不自动重试；没有实物不能声称已静音。NVS仅 `amp_i2c/profile_v1`。

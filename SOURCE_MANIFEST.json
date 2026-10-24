@@ -377,15 +377,22 @@
     },
     {
       "path": "docs/PROTOCOL.md",
-      "bytes": 7340,
-      "sha256": "1F301BE02A4C93D46DD42764BD734391E7F3E58E2E949D4548DC4FFB68D9CB4F",
+      "bytes": 7305,
+      "sha256": "2055E030C23709F492DCA666E1FD755E964E56744CB6C21C38185572DC0C5DA9",
       "source_sha256": "EF5472A3214855EC3F87A10DCE0C6DE1BED4349CC575D273E5DC3BC08D5AAB45",
-      "publication_change": "Replace local workflow reference with public provenance files"
+      "publication_change": "Replace local workflow and amplifier references with public documentation"
     },
     {
       "path": "docs/images/webui-zh.png",
       "bytes": 159946,
       "sha256": "56BC37C3C63F65C1DCA21D42B3C94D90730947316D23A7B80D1A084898808F0B"
+    },
+    {
+      "path": "docs/AMPLIFIER_CONTROL.md",
+      "bytes": 6097,
+      "sha256": "AD3F80C4F8D6D58801130D99C1F39847348DA7128F2069BF4DD62D5303A182B4",
+      "source_sha256": "F9FFD4F185BB835B7E01F6A00F7223836EDFF632A03B5025EFFE5F3E3CA0E08D",
+      "publication_change": "Remove local board-specific wording; preserve schema and protocol"
     }
   ],
   "excluded": [

@@ -41,6 +41,12 @@
       "git_blob_sha1": "c5525b692031c60a553564566791b7e7189ca695"
     },
     {
+      "path": "docs/AMPLIFIER_CONTROL.md",
+      "bytes": 6097,
+      "sha256": "AD3F80C4F8D6D58801130D99C1F39847348DA7128F2069BF4DD62D5303A182B4",
+      "git_blob_sha1": "3c573ed4b2efd6db2004169be8aed6af82a52c3f"
+    },
+    {
       "path": "docs/BUILD.md",
       "bytes": 3298,
       "sha256": "438FB6EDECF45D36CCA11752D49121D6BF7865863549BE5FF7CEE7D77AC263BC",
@@ -66,9 +72,9 @@
     },
     {
       "path": "docs/PROTOCOL.md",
-      "bytes": 7340,
-      "sha256": "1F301BE02A4C93D46DD42764BD734391E7F3E58E2E949D4548DC4FFB68D9CB4F",
-      "git_blob_sha1": "26ee3e0cff8ffb6f61efc31153dc34be74cfc7d4"
+      "bytes": 7305,
+      "sha256": "2055E030C23709F492DCA666E1FD755E964E56744CB6C21C38185572DC0C5DA9",
+      "git_blob_sha1": "ce49591b9c42f5d39e97a136d34f73bb35586b0a"
     },
     {
       "path": "firmware/CMakeLists.txt",
@@ -690,9 +696,9 @@
     },
     {
       "path": "SOURCE_MANIFEST.json",
-      "bytes": 13881,
-      "sha256": "A4FC621B9C68158410C57723B80FB8D2E6E6D945450986CBBF962384A5562EC4",
-      "git_blob_sha1": "d211797de9b4b9228a44d540efca651cd07fee89"
+      "bytes": 14248,
+      "sha256": "ABD9D6EE5C9B2EA374907697CDE80A5C9274FB392CC35875DD8E21BAE6FAE57F",
+      "git_blob_sha1": "4f3a799c5607339b262fd4cb934e423501b4be0e"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
